@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="习题题面设 $D$ 是 $[0,1]$ 区间上具有连续导数（在端点 $t&#x3D;1$，$t&#x3D;0$ 分别具有左、右导数）的实函数全体，在 $D$ 上定义 $$d(x,y)&#x3D;\sup\limits_{0 \leq t \leq 1}\left| x(t)-y(t) \right|+\sup\limits_{0 \leq t \leq 1}\left| x(t)’-y(t)’ \">
+    <meta name="description" content="习题题面 设 $D$ 是 $[0,1]$ 区间上具有连续导数（在端点 $t&#x3D;1$，$t&#x3D;0$ 分别具有左、右导数）的实函数全体，在 $D$ 上定义 $$ d(x,y)&#x3D;\sup\limits_{0 \leq t \leq 1}\left| x(t)-y(t) \right|+\sup\limits_{0 \leq t \leq 1}\left| x(t)‘-y(t)’ \right| $$  证明">
 <meta property="og:type" content="article">
 <meta property="og:title" content="泛函分析习题讲解 习题1.1">
 <meta property="og:url" content="http://example.com/2026/07/24/functional_exercises1-1/index.html">
 <meta property="og:site_name" content="BillyBlog">
-<meta property="og:description" content="习题题面设 $D$ 是 $[0,1]$ 区间上具有连续导数（在端点 $t&#x3D;1$，$t&#x3D;0$ 分别具有左、右导数）的实函数全体，在 $D$ 上定义 $$d(x,y)&#x3D;\sup\limits_{0 \leq t \leq 1}\left| x(t)-y(t) \right|+\sup\limits_{0 \leq t \leq 1}\left| x(t)’-y(t)’ \">
+<meta property="og:description" content="习题题面 设 $D$ 是 $[0,1]$ 区间上具有连续导数（在端点 $t&#x3D;1$，$t&#x3D;0$ 分别具有左、右导数）的实函数全体，在 $D$ 上定义 $$ d(x,y)&#x3D;\sup\limits_{0 \leq t \leq 1}\left| x(t)-y(t) \right|+\sup\limits_{0 \leq t \leq 1}\left| x(t)‘-y(t)’ \right| $$  证明">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-24T14:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-23T21:03:45.519Z">
+<meta property="article:modified_time" content="2026-07-24T06:20:04.377Z">
 <meta property="article:author" content="Billyfu">
 <meta name="twitter:card" content="summary">
 
@@ -62,6 +62,12 @@
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 
@@ -237,7 +243,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2026-07-24 22:00:00 / 修改时间：05:03:45" itemprop="dateCreated datePublished" datetime="2026-07-24T22:00:00+08:00">2026-07-24</time>
+      <time title="创建时间：2026-07-24 22:00:00 / 修改时间：14:20:04" itemprop="dateCreated datePublished" datetime="2026-07-24T22:00:00+08:00">2026-07-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -262,75 +268,114 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="习题题面"><a href="#习题题面" class="headerlink" title="习题题面"></a>习题题面</h2><p>设 $D$ 是 $[0,1]$ 区间上具有连续导数（在端点 $t&#x3D;1$，$t&#x3D;0$ 分别具有左、右导数）的实函数全体，在 $D$ 上定义</p>
-<p>$$<br>d(x,y)&#x3D;\sup\limits_{0 \leq t \leq 1}\left| x(t)-y(t) \right|+\sup\limits_{0 \leq t \leq 1}\left| x(t)’-y(t)’ \right|<br>$$</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="习题题面">习题题面</h2>
+<p>设 $D$ 是 $[0,1]$ 区间上具有连续导数（在端点 $t=1$，$t=0$ 分别具有左、右导数）的实函数全体，在 $D$ 上定义</p>
+<p>$$<br>
+d(x,y)=\sup\limits_{0 \leq t \leq 1}\left| x(t)-y(t) \right|+\sup\limits_{0 \leq t \leq 1}\left| x(t)‘-y(t)’ \right|<br>
+$$</p>
 <ol>
 <li>证明 $D$ 是距离空间；</li>
 <li>指出 $D$ 中点列按距离收敛的意义；</li>
 <li>证明 $D$ 是完备的.</li>
 </ol>
 <span id="more"></span>
-
-<h2 id="教材参考答案"><a href="#教材参考答案" class="headerlink" title="教材参考答案"></a>教材参考答案</h2><ol>
+<h2 id="教材参考答案">教材参考答案</h2>
+<ol>
 <li>显然.</li>
 <li>$D$ 中点列按距离收敛等价于函数列及其导函数列在 $\left\lbrack{0,1}\right\rbrack$ 上一致收敛.</li>
-<li>易见，$D$ 是 $C\left\lbrack{0,1}\right\rbrack$ 的子空间，设 ${x}<em>{n}\left( t\right)$ 及其导函数列在 $\left\lbrack{0,1}\right\rbrack$ 上一致收敛于 $x\left( t\right)$，其中，${x}</em>{n}\in D\left({n &#x3D; 1,2\cdots}\right)$，$x\in C\left\lbrack{0,1}\right\rbrack$. 则由数学分析知，$x\left(t\right)$ 在 $\left\lbrack{0,1}\right\rbrack$ 上具有连续导数，即 $x\in D$，因此 $D$ 是 $C\left\lbrack{0,1}\right\rbrack$ 的闭子空间，从而是完备的.</li>
+<li>易见，$D$ 是 $C\left\lbrack{0,1}\right\rbrack$ 的子空间，设 ${x}<em>{n}\left( t\right)$ 及其导函数列在 $\left\lbrack{0,1}\right\rbrack$ 上一致收敛于 $x\left( t\right)$，其中，${x}</em>{n}\in D\left({n = 1,2\cdots}\right)$，$x\in C\left\lbrack{0,1}\right\rbrack$. 则由数学分析知，$x\left(t\right)$ 在 $\left\lbrack{0,1}\right\rbrack$ 上具有连续导数，即 $x\in D$，因此 $D$ 是 $C\left\lbrack{0,1}\right\rbrack$ 的闭子空间，从而是完备的.</li>
 </ol>
-<h2 id="习题分析"><a href="#习题分析" class="headerlink" title="习题分析"></a>习题分析</h2><p>这道题的教材参考答案给得过于简略，甚至在第三问存在一个极易误导初学者的逻辑纰漏。作为泛函分析课程初期的重要练习，直接生搬硬套这段答案显然是不严谨的。具体分析如下：</p>
+<h2 id="习题分析">习题分析</h2>
+<p>这道题的教材参考答案给得过于简略，甚至在第三问存在一个极易误导初学者的逻辑纰漏。作为泛函分析课程初期的重要练习，直接生搬硬套这段答案显然是不严谨的。具体分析如下：</p>
 <ul>
 <li><strong>第一问：</strong> 教材给出的“显然”二字，在作业或考试答题时是绝对的“失分项”。验证距离空间的三条公理时，非负性和对称性确实容易看出，但<strong>三角不等式的放缩绝不“显然”</strong>。这里不仅涉及上确界（$\sup$）的次可加性放缩，还涉及导函数的放缩转换。同学们必须完整地写出放缩过程，才能体现出严密的数学推导能力。</li>
 <li><strong>第二问：</strong> 教材给出的结论完全正确，但缺乏理论推导的支撑。解答时必须明确指出：因为距离定义中的两个 $\sup$ 项均非负，所以它们的和趋于0，必须等价于它们<strong>各自</strong>趋于0。只有点透这一层代数关系，才能严密对应到数学分析中“函数列及其导函数列一致收敛”的概念上。</li>
 <li><strong>第三问：</strong> 教材的证明存在<strong>严重的逻辑漏洞</strong>！教材称“$D$ 是 $C[0,1]$ 的闭子空间，从而是完备的”。请特别注意，要使用“完备空间的闭子集是完备的”这一结论，大前提是<strong>子空间必须继承原空间的距离度量</strong>。本题中 $D$ 空间的度量 $d(x,y)$ 包含了导数的绝对值上确界差，而 $C[0,1]$ 空间的标准度量仅有函数值的绝对值上确界差。两者的距离度量完全不同！因此，在度量不一致的情况下，绝不能简单粗暴地将 $D$ 视为 $C[0,1]$ 的度量子空间去套用定理。要严格证明完备性，我们有两条路可走：一是“返璞归真”，直接利用Cauchy列的定义进行证明；二是巧妙构造“等距映射”，将 $D$ 映射到真正的完备乘积空间 $C[0,1] \times C[0,1]$ 的闭子集中。</li>
 </ul>
-<h2 id="标准解答"><a href="#标准解答" class="headerlink" title="标准解答"></a>标准解答</h2><h4 id="证明-D-是距离空间"><a href="#证明-D-是距离空间" class="headerlink" title="证明 $D$ 是距离空间"></a><strong>证明 $D$ 是距离空间</strong></h4><p>要证明 $(D,d)$ 是距离空间，需要验证对于任意 $x,y,z \in D$，距离的三条基本公理均成立.</p>
+<h2 id="标准解答">标准解答</h2>
+<h4 id="证明-D-是距离空间"><strong>证明 $D$ 是距离空间</strong></h4>
+<p>要证明 $(D,d)$ 是距离空间，需要验证对于任意 $x,y,z \in D$，距离的三条基本公理均成立.</p>
 <p>由于 $x,y \in D$，它们及其导函数在闭区间 $[0,1]$ 上连续，由闭区间上连续函数的有界性可知，$\sup|x(t)-y(t)|$ 与 $\sup|x’(t)-y’(t)|$ 必为有限实数，故 $d(x,y)$ 存在且有限.</p>
-<p>首先证明非负性与同一性. 显然 $\sup|x(t)-y(t)| \ge 0$ 且 $\sup|x’(t)-y’(t)| \ge 0$，故 $d(x,y) \ge 0$. 若 $d(x,y)&#x3D;0$，因为两项均非负，则必须有 $\sup|x(t)-y(t)|&#x3D;0$，即对任意 $t \in [0,1]$，都有 $x(t)-y(t)&#x3D;0$，推得 $x&#x3D;y$. 反之亦然.</p>
+<p>首先证明非负性与同一性. 显然 $\sup|x(t)-y(t)| \ge 0$ 且 $\sup|x’(t)-y’(t)| \ge 0$，故 $d(x,y) \ge 0$. 若 $d(x,y)=0$，因为两项均非负，则必须有 $\sup|x(t)-y(t)|=0$，即对任意 $t \in [0,1]$，都有 $x(t)-y(t)=0$，推得 $x=y$. 反之亦然.</p>
 <p>其次证明对称性.</p>
-<p>$$<br>\begin{aligned}<br>d(x,y) &amp;&#x3D; \sup_{t \in [0,1]}|x(t)-y(t)| + \sup_{t \in [0,1]}|x’(t)-y’(t)| \<br>&amp;&#x3D; \sup_{t \in [0,1]}|y(t)-x(t)| + \sup_{t \in [0,1]}|y’(t)-x’(t)| &#x3D; d(y,x)<br>\end{aligned}<br>$$</p>
+<p>$$<br>
+\begin{aligned}<br>
+d(x,y) &amp;= \sup_{t \in [0,1]}|x(t)-y(t)| + \sup_{t \in [0,1]}|x’(t)-y’(t)| \<br>
+&amp;= \sup_{t \in [0,1]}|y(t)-x(t)| + \sup_{t \in [0,1]}|y’(t)-x’(t)| = d(y,x)<br>
+\end{aligned}<br>
+$$</p>
 <p>最后证明三角不等式. 对任意 $x,y,z\in D$，根据实数绝对值的三角不等式有：</p>
-<p>$$<br>|x(t)-y(t)| \le |x(t)-z(t)| + |z(t)-y(t)|<br>$$</p>
+<p>$$<br>
+|x(t)-y(t)| \le |x(t)-z(t)| + |z(t)-y(t)|<br>
+$$</p>
 <p>两边对 $t\in [0,1]$ 取上确界：</p>
-<p>$$<br>\sup_{t \in [0,1]}|x(t)-y(t)| \le \sup_{t \in [0,1]}|x(t)-z(t)| + \sup_{t \in [0,1]}|z(t)-y(t)|<br>$$</p>
+<p>$$<br>
+\sup_{t \in [0,1]}|x(t)-y(t)| \le \sup_{t \in [0,1]}|x(t)-z(t)| + \sup_{t \in [0,1]}|z(t)-y(t)|<br>
+$$</p>
 <p>同理，对导函数部分也有：</p>
-<p>$$<br>\sup_{t \in [0,1]}|x’(t)-y’(t)| \le \sup_{t \in [0,1]}|x’(t)-z’(t)| + \sup_{t \in [0,1]}|z’(t)-y’(t)|<br>$$</p>
+<p>$$<br>
+\sup_{t \in [0,1]}|x’(t)-y’(t)| \le \sup_{t \in [0,1]}|x’(t)-z’(t)| + \sup_{t \in [0,1]}|z’(t)-y’(t)|<br>
+$$</p>
 <p>将上述两式相加，即可得到：</p>
-<p>$$<br>\begin{aligned}<br>d(x,y) &amp;&#x3D; \sup|x(t)-y(t)| + \sup|x’(t)-y’(t)| \<br>&amp;\le \left( \sup|x(t)-z(t)| + \sup|x’(t)-z’(t)| \right) + \left( \sup|z(t)-y(t)| + \sup|z’(t)-y’(t)| \right) \<br>&amp;&#x3D; d(x,z) + d(z,y)<br>\end{aligned}<br>$$</p>
+<p>$$<br>
+\begin{aligned}<br>
+d(x,y) &amp;= \sup|x(t)-y(t)| + \sup|x’(t)-y’(t)| \<br>
+&amp;\le \left( \sup|x(t)-z(t)| + \sup|x’(t)-z’(t)| \right) + \left( \sup|z(t)-y(t)| + \sup|z’(t)-y’(t)| \right) \<br>
+&amp;= d(x,z) + d(z,y)<br>
+\end{aligned}<br>
+$$</p>
 <p>综上，$(D,d)$ 满足距离三公理，构成一个距离空间.</p>
-<h4 id="指出-D-中点列按距离收敛的意义"><a href="#指出-D-中点列按距离收敛的意义" class="headerlink" title="指出$D$中点列按距离收敛的意义"></a>指出$D$中点列按距离收敛的意义</h4><p>设点列 ${x_n}\subset D$，点 $x\in D$. 按距离收敛的定义，$\lim_{n \to \infty}d(x_n,x)&#x3D;0$. 根据本题距离的定义，即：</p>
-<p>$$<br>\lim_{n \to \infty} \left( \sup\limits_{t \in [0,1]} |x_n(t)-x(t)| + \sup\limits_{t \in [0,1]} |x_n’(t)-x’(t)| \right) &#x3D; 0<br>$$</p>
+<h4 id="指出-D-中点列按距离收敛的意义">指出$D$中点列按距离收敛的意义</h4>
+<p>设点列 ${x_n}\subset D$，点 $x\in D$. 按距离收敛的定义，$\lim_{n \to \infty}d(x_n,x)=0$. 根据本题距离的定义，即：</p>
+<p>$$<br>
+\lim_{n \to \infty} \left( \sup\limits_{t \in [0,1]} |x_n(t)-x(t)| + \sup\limits_{t \in [0,1]} |x_n’(t)-x’(t)| \right) = 0<br>
+$$</p>
 <p>因为上式括号内的两项均非负，它们之和趋于0，当且仅当它们分别趋于0. 即：</p>
-<p>$$<br>\lim_{n \to \infty} \sup_{t \in [0,1]}|x_n(t)-x(t)| &#x3D; 0 \quad \text{且} \quad \lim_{n \to \infty} \sup_{t \in [0,1]}|x_n’(t)-x’(t)| &#x3D; 0<br>$$</p>
+<p>$$<br>
+\lim_{n \to \infty} \sup_{t \in [0,1]}|x_n(t)-x(t)| = 0 \quad \text{且} \quad \lim_{n \to \infty} \sup_{t \in [0,1]}|x_n’(t)-x’(t)| = 0<br>
+$$</p>
 <p>在数学分析中，这恰好是函数列及其导函数列在 $[0,1]$ 上一致收敛的定义.</p>
 <p>综上所述，$D$ 中点列按距离收敛，其意义等价于函数列 ${x_n(t)}$ 在 $[0,1]$ 上一致收敛于 $x(t)$，并且其导函数列 ${x_n’(t)}$ 也在 $[0,1]$ 上一致收敛于 $x’(t)$.</p>
-<h4 id="证明-D-是完备的"><a href="#证明-D-是完备的" class="headerlink" title="证明$D$是完备的."></a>证明$D$是完备的.</h4><p>这里给出两种严密的证明方法。</p>
+<h4 id="证明-D-是完备的">证明$D$是完备的.</h4>
+<p>这里给出两种严密的证明方法。</p>
 <p><strong>证法一：直接利用Cauchy列定义</strong></p>
 <p>设 ${x_n}$ 是 $(D,d)$ 中的任意一个Cauchy列. 即对 $\forall\varepsilon&gt;0$，$\exists N$，当 $m,n&gt;N$ 时，有 $d(x_n,x_m)&lt;\varepsilon$. 展开距离定义得：</p>
-<p>$$<br>\sup_{t \in [0,1]} |x_n(t)-x_m(t)| + \sup_{t \in [0,1]} |x_n’(t)-x_m’(t)| &lt; \varepsilon<br>$$</p>
+<p>$$<br>
+\sup_{t \in [0,1]} |x_n(t)-x_m(t)| + \sup_{t \in [0,1]} |x_n’(t)-x_m’(t)| &lt; \varepsilon<br>
+$$</p>
 <p>由于两项均非负，这蕴含着：</p>
 <ul>
 <li>$\sup_{t}|x_n(t)-x_m(t)|&lt;\varepsilon\implies{x_n(t)}$ 是连续函数空间 $C[0,1]$ 中的Cauchy列.</li>
 <li>$\sup_{t}|x_n’(t)-x_m’(t)|&lt;\varepsilon\implies{x_n’(t)}$ 也是连续函数空间 $C[0,1]$ 中的Cauchy列.</li>
 </ul>
 <p>由于赋以一致距离的 $C[0,1]$ 空间是完备的，因此必定存在两个连续函数 $x(t),y(t)\in C[0,1]$，使得函数列 ${x_n(t)}$ 在 $[0,1]$ 上一致收敛于 $x(t)$，且导函数列 ${x_n’(t)}$ 在 $[0,1]$ 上一致收敛于 $y(t)$.</p>
-<p>根据数学分析中经典的<strong>函数列求导定理</strong>：若函数列 ${x_n}$ 在闭区间上可导且在一点收敛（一致收敛已满足此条件），且其导函数列 ${x_n’}$ 一致收敛于 $y(t)$，则极限函数 $x(t)$ 同样可导，并且 $x’(t)&#x3D;y(t)$. 由此可知，极限函数 $x(t)$ 具有连续的导数 $x’(t)&#x3D;y(t)$，这意味着极限函数 $x(t)\in D$.</p>
+<p>根据数学分析中经典的<strong>函数列求导定理</strong>：若函数列 ${x_n}$ 在闭区间上可导且在一点收敛（一致收敛已满足此条件），且其导函数列 ${x_n’}$ 一致收敛于 $y(t)$，则极限函数 $x(t)$ 同样可导，并且 $x’(t)=y(t)$. 由此可知，极限函数 $x(t)$ 具有连续的导数 $x’(t)=y(t)$，这意味着极限函数 $x(t)\in D$.</p>
 <p>最后，我们检查度量收敛性：由于 $x_n\rightrightarrows x$ 且 $x_n’\rightrightarrows x’$，可知 $d(x_n, x)\to 0$. 因为任意Cauchy列在空间 $D$ 中都收敛于属于 $D$ 的极限点，故 $D$ 是完备的.</p>
 <p><strong>证法二：等距映射与闭子集法</strong></p>
-<p>考虑乘积空间 $Y &#x3D; C[0,1]\times C[0,1]$. 对于 $Y$ 中的任意两个元素 $(u_1,v_1)$ 与 $(u_2,v_2)$，我们在 $Y$ 上定义距离为：</p>
-<p>$$<br>\rho((u_1,v_1),(u_2,v_2)) &#x3D; \sup_{t \in [0,1]}|u_1(t)-u_2(t)| + \sup_{t \in [0,1]}|v_1(t)-v_2(t)|<br>$$</p>
+<p>考虑乘积空间 $Y = C[0,1]\times C[0,1]$. 对于 $Y$ 中的任意两个元素 $(u_1,v_1)$ 与 $(u_2,v_2)$，我们在 $Y$ 上定义距离为：</p>
+<p>$$<br>
+\rho((u_1,v_1),(u_2,v_2)) = \sup_{t \in [0,1]}|u_1(t)-u_2(t)| + \sup_{t \in [0,1]}|v_1(t)-v_2(t)|<br>
+$$</p>
 <p>由于赋以一致距离的连续函数空间 $C[0,1]$ 是完备的，不难证明由其构成的乘积空间 $(Y,\rho)$ 也是一个完备距离空间.</p>
-<p>现在，我们定义一个映射 $T:D\to Y$，令 $T(x)&#x3D;(x, x’)$。根据空间 $D$ 中距离的定义，对任意 $x,y\in D$，显然有：</p>
-<p>$$<br>d(x,y) &#x3D; \rho(T(x),T(y))<br>$$</p>
+<p>现在，我们定义一个映射 $T:D\to Y$，令 $T(x)=(x, x’)$。根据空间 $D$ 中距离的定义，对任意 $x,y\in D$，显然有：</p>
+<p>$$<br>
+d(x,y) = \rho(T(x),T(y))<br>
+$$</p>
 <p>因此，$T$ 是 $D$ 到其像集 $T(D)\subset Y$ 上的一个<strong>等距映射</strong>. 因为等距映射保持空间的完备性，要证明 $D$ 完备，只需证明它的等距像集 $T(D)$ 在 $Y$ 中是完备的. 又因为全空间 $Y$ 已知完备，我们只需要进一步证明 $T(D)$ 是 $Y$ 中的<strong>闭子集</strong>即可.</p>
 <p>观察像集的结构可知：</p>
-<p>$$<br>T(D) &#x3D; {(u, v) \in Y \mid u \text{在} [0,1] \text{上连续可导，且} u’ &#x3D; v}<br>$$</p>
+<p>$$<br>
+T(D) = {(u, v) \in Y \mid u \text{在} [0,1] \text{上连续可导，且} u’ = v}<br>
+$$</p>
 <p>假设存在 $T(D)$ 中的点列 ${(u_n,v_n)}$，它在度量 $\rho$ 下收敛于 $Y$ 中的某一点 $(u,v)$. 由 $\rho$ 的定义可知，这等价于当 $n\to\infty$ 时，$\sup_t|u_n(t)-u(t)|\to 0$ 且 $\sup_t|v_n(t)-v(t)|\to 0$。换言之，函数列 ${u_n(t)}$ 在 $[0,1]$ 上一致收敛于 $u(t)$，且其导函数列 ${u_n’(t)}$（即 ${v_n(t)}$）在 $[0,1]$ 上一致收敛于 $v(t)$.</p>
-<p>根据数学分析中导函数列一致收敛的定理，极限函数 $u$ 必然具有连续导数，并且 $u’&#x3D;v$。这表明极限点 $(u,v)$ 完全满足像集的定义要求，即 $(u,v) \in T(D)$.</p>
-<h2 id="助教提点"><a href="#助教提点" class="headerlink" title="助教提点"></a>助教提点</h2><p>这道题本质上难度并不大，难度系数大约在两颗星左右。作为《泛函分析》开篇的基础习题，它在考试或作业中出现时，与其说是考察复杂的计算技巧，不如说是考察大家如何运用严谨的数学逻辑去推导和表述那些“看似显然”的结论。因此，这道题的得分关键点全部落在证明过程中的逻辑衔接上——绝不能“跳步”，也不能用“显然”二字敷衍了事。</p>
+<p>根据数学分析中导函数列一致收敛的定理，极限函数 $u$ 必然具有连续导数，并且 $u’=v$。这表明极限点 $(u,v)$ 完全满足像集的定义要求，即 $(u,v) \in T(D)$.</p>
+<h2 id="助教提点">助教提点</h2>
+<p>这道题本质上难度并不大，难度系数大约在两颗星左右。作为《泛函分析》开篇的基础习题，它在考试或作业中出现时，与其说是考察复杂的计算技巧，不如说是考察大家如何运用严谨的数学逻辑去推导和表述那些“看似显然”的结论。因此，这道题的得分关键点全部落在证明过程中的逻辑衔接上——绝不能“跳步”，也不能用“显然”二字敷衍了事。</p>
 <p>基于此，如果这是一道满分为10分的作业题或考题，我的评分细则会这样设置：</p>
 <ul>
 <li>第一问（3分）：准确写出并证明距离空间的三条公理，每条公理（非负性与同一性、对称性、三角不等式）各占1分。特别是三角不等式中的确界放缩过程，必须清晰写出，这是本问最重要的得分点。</li>
 <li>第二问（3分）：能够明确指出距离趋于0意味着两项 $\sup$ 必须分别趋于0（得2分），并以此准确对应到数学分析中函数列及其导函数列的“一致收敛”这一定义上（得1分）。</li>
-<li>第三问（4分）：<ul>
+<li>第三问（4分）：
+<ul>
 <li>若使用证法一：明确由距离度量推导出函数列和导函数列分别是 $C[0,1]$ 中的Cauchy列（得2分）；准确引用《数学分析》中的函数列求导定理，得出极限函数不仅可导且其导数等于导函数列的极限（得2分）。</li>
 <li>若使用证法二：成功构造出完备的乘积空间 $Y$（得1分）；指明题干中的映射 $T$ 为等距映射（得1分）；完整且逻辑严密地证明出像集 $T(D)$ 是 $Y$ 中的闭子集（得2分）。</li>
 </ul>
@@ -349,11 +394,14 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2026/07/24/functional_intro/" rel="prev" title="泛函分析习题讲解 引言">
-                  <i class="fa fa-angle-left"></i> 泛函分析习题讲解 引言
+                <a href="/2025/07/30/diary1/" rel="prev" title="2025年夏季学术会议手记：AI与精准放疗的前沿探索">
+                  <i class="fa fa-angle-left"></i> 2025年夏季学术会议手记：AI与精准放疗的前沿探索
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2026/07/24/functional_intro/" rel="next" title="泛函分析习题讲解 引言">
+                  泛函分析习题讲解 引言 <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
