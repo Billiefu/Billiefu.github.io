@@ -239,7 +239,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2026-07-30 02:30:00 / 修改时间：02:46:54" itemprop="dateCreated datePublished" datetime="2026-07-30T02:30:00+08:00">2026-07-30</time>
+      <time title="创建时间：2026-07-30 02:30:00 / 修改时间：02:50:02" itemprop="dateCreated datePublished" datetime="2026-07-30T02:30:00+08:00">2026-07-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -267,130 +267,14 @@
     <div class="post-body" itemprop="articleBody">
           <h2 id="习题题面">习题题面</h2>
 <p>试举一例说明有界集不是全有界集.</p>
-<h2 id="习题分析">习题分析</h2>
-<p>接下来四道题是整本书当中唯四没有教材参考答案的题目，所以我们没办法对课本进行
-<del>批判</del> 学习 了。</p>
-<p>这一道题虽然从定义上看是在考察“有界”与“全有界”的区别，但它实则是一道披着基本概念外衣、深入探讨<strong>有限维与无穷维空间紧致性差异</strong>的经典题目。</p>
-<p>我们先来看课本当中对于“全有界”的阐述。课本上的阐述是，如果一个距离空间的子集有有穷的
-<span class="math inline">\(\varepsilon\)</span>
-网，那么它就是全有界集。通过对这个定义的分析，可以发现它实际上可以形象地理解为，如果能够用有限个半径足够小的小球去完整覆盖住一个集合，我们就可以说这个集合是全有界的。概念里的“小球”在度量空间中就是开球，因此整个条件完全等价于：对于任意给定的精度，该集合总是存在有限的开球覆盖。这个语言表达想必各位同学都非常眼熟——它本质上正是拓扑学中“开覆盖定理”的度量化语言。</p>
-<p>在有限维空间当中（以大家最熟悉的实数系 <span
-class="math inline">\(\mathbb{R}^n\)</span> 为例），我们有经典的 Borel
-有限覆盖定理来保证实数有界闭区间的紧致性；这其实就揭示了一个深刻的事实：在有限维欧氏空间中，集合的有界性本身就能强制约束空间不向无限拓展，从而有力保障了其全有界性。而由我们在数学分析中熟知的
-Bolzano-Weierstrass
-聚点定理可知：任何一个有界序列必存在收敛的子序列。用泛函分析的现代语言来讲，这就是说有限维空间当中的任何有界集一定具有列紧性。而在完备度量空间中，“列紧性”与“全有界集”是互为等价的概念，因此“有界必全有界”。对于这段紧致性与有界序列关系有所遗忘的同学，强烈建议翻阅一下学院使用的、邓东皋老师编写的《数学分析简明教程》上册第九章“再论实数系”中第2节的相关定理重新温习。</p>
-<p>然而，当我们要跨越到无穷维空间时，这套逻辑铁律便遭到了根本性的破坏。在无穷维距离空间中，“有界”无法再确保集合具有列紧性。这是因为无穷多的独立坐标方向（无限自由度）为点列提供了一种全新的“逃逸机制”：我们完全不需要让序列中的点向无穷远处发散，而只需顺着无限多个互相独立（如相互正交）的坐标维度依次布点，就能构造出一个既被围在有限半径的开球内（整体有界），又使得序列中任意两点间的距离被顽固地保持在某个大于零的常数之上的无限集合。由于这样的集合里任何两点都不会“靠近”彼此，我们绝对不可能从中抽取任何基本列（Cauchy列），更不可能用有限个小尺度的开球将其完整覆盖。这也是为什么寻求本题的反例，必须要将目光投向无穷维距离空间（或奇特的非连续距离度量）的根本理由。</p>
-<h2 id="标准解答">标准解答</h2>
-<p>下面提供三种不同空间下的反例.
-这三个反例从抽象的度量空间到具体的函数空间，呈现出理论上的层层递进关系，在答题时选择其一作答即可.</p>
-<h3 id="反例-1">反例 1</h3>
-<p>首先，我们抛开空间的线性结构，仅从最底层的距离定义出发，观察纯度量空间是如何打破有界与全有界的等价性的.
-考虑一条实数轴 <span class="math inline">\(X =
-\mathbb{R}\)</span>，在其上赋予<strong>离散距离</strong>：当 <span
-class="math inline">\(x = y\)</span> 时 <span
-class="math inline">\(d(x,y) = 0\)</span>，当 <span
-class="math inline">\(x \neq y\)</span> 时 <span
-class="math inline">\(d(x,y) = 1\)</span>.
-此时我们选取整个空间本身作为研究的集合，即 <span class="math inline">\(A
-= \mathbb{R}\)</span>.</p>
-<p>对于该集合的有界性，由离散距离的定义可知，空间中任意两点的距离最大恒为
-<span class="math inline">\(1\)</span>. 因此，我们在空间中随性取定某一点
-<span class="math inline">\(x_0 \in X\)</span>，只需取半径为 <span
-class="math inline">\(R = 2\)</span>，即可使得整个集合 <span
-class="math inline">\(A\)</span> 都落在开球 <span
-class="math inline">\(B(x_0, 2)\)</span> 之中. 由定义即可断言：集合
-<span class="math inline">\(A\)</span> 是一个有界集.</p>
-<p>然而，集合 <span class="math inline">\(A\)</span> 却绝对不是全有界集.
-如果我们选取精度 <span class="math inline">\(\varepsilon =
-1/2\)</span>，由于空间中任意不同点之间的距离恒为 <span
-class="math inline">\(1\)</span>，以任意点 <span
-class="math inline">\(x\)</span> 为球心、半径为 <span
-class="math inline">\(1/2\)</span> 的开球 <span
-class="math inline">\(B(x, 1/2)\)</span>，将无法包容其他任何点，必有
-<span class="math inline">\(B(x, 1/2) =
-\{x\}\)</span>，即每个小球只能容纳其球心唯一的点. 由于实数集 <span
-class="math inline">\(A = \mathbb{R}\)</span>
-拥有无穷多个元素，我们显然不可能仅凭有限个只能装一个点的小球去覆盖完整个无限集.
-这从纯度量拓扑的视角阐明了有界集并非必为全有界集.</p>
-<h3 id="反例-2">反例 2</h3>
-<p>如果我们进阶到具备线性结构的<strong>赋范线性空间</strong>中，有界却不全有界的本质，就表现为无穷多个独立坐标轴所带来的“维度逃逸”.
-考虑所有有界实数列在无穷范数 <span class="math inline">\(d(x,y) =
-\sup_{i} |\xi_i - \eta_i|\)</span> 意义下构成的数列空间 <span
-class="math inline">\(X = l^\infty\)</span>.
-我们选取一系列自然基向量构成的集合 <span class="math inline">\(A = \{e_n
-\mid n \in \mathbb{N}^+\}\)</span>，其中第 <span
-class="math inline">\(n\)</span> 个基向量 <span
-class="math inline">\(e_n\)</span> 的第 <span
-class="math inline">\(n\)</span> 个分量为 1，其余各分量均恒为 0.</p>
-<p>从有界性方面来看，对于集合 <span class="math inline">\(A\)</span>
-中的任意元素 <span class="math inline">\(e_n\)</span>，它到原点零向量
-<span class="math inline">\(\mathbf{0} = (0,0,\dots)\)</span>
-的距离恒等为其范数，即 <span class="math inline">\(d(e_n, \mathbf{0}) =
-\sup_i |e_n^{(i)}| = 1\)</span>.
-这说明所有单位基向量都被封闭在以原点为圆心、半径为 <span
-class="math inline">\(2\)</span> 的固定开球中，因此 <span
-class="math inline">\(A\)</span> 无疑是一个有界集.</p>
-<p>但该集合无法满足全有界性的要求. 我们考察集合 <span
-class="math inline">\(A\)</span> 中任意两个不同的基向量 <span
-class="math inline">\(e_n\)</span> 与 <span
-class="math inline">\(e_m\)</span>（<span class="math inline">\(n \neq
-m\)</span>），它们在序列的第 <span class="math inline">\(n\)</span>
-位和第 <span class="math inline">\(m\)</span> 位差值的绝对值皆为 <span
-class="math inline">\(1\)</span>，从而使得任两点之间的间距恒定为 <span
-class="math inline">\(d(e_n, e_m) = 1\)</span>. 若取 <span
-class="math inline">\(\varepsilon = 1/2\)</span>，并假设集合 <span
-class="math inline">\(A\)</span> 能够被有限个半径为 <span
-class="math inline">\(1/2\)</span>
-的开球所完全覆盖；根据鸽巢原理，必定至少有一个开球需要同时容纳集合 <span
-class="math inline">\(A\)</span> 中的至少两个不同点.
-但根据距离空间的三角不等式，同一个半径为 <span
-class="math inline">\(1/2\)</span> 的开球中，任意两点间的距离严格小于
-<span class="math inline">\(1/2 + 1/2 =
-1\)</span>，这与该集合任意两不同向量间距定为 <span
-class="math inline">\(1\)</span> 的事实产生了不可调和的矛盾. 故而，<span
-class="math inline">\(A\)</span> 不可能是全有界集.</p>
-<h3 id="反例-3">反例 3</h3>
-<p>更进一步，在数学分析与古典微积分中最为常见的<strong>无限维函数空间</strong>里，这种“互不靠拢”的距离隔离，正是由函数族之间的<strong>正交性</strong>来驱动的.
-考虑闭区间 <span class="math inline">\([0,1]\)</span>
-上的全体实连续函数所构成的赋范线性空间 <span class="math inline">\(X =
-C[0,1]\)</span>，赋予一致度量 <span class="math inline">\(d(f,g) =
-\max_{t \in [0,1]} |f(t) - g(t)|\)</span>.
-我们构造经典正弦三角函数列组成的集合 <span class="math inline">\(A =
-\{f_n(t) = \sin(n\pi t) \mid n \in \mathbb{N}^+\}\)</span>.</p>
-<p>首先验证有界性：根据正弦函数的自然界限，对于任意正整数 <span
-class="math inline">\(n\)</span> 以及定义域中的任意点 <span
-class="math inline">\(t\in [0,1]\)</span>，始终成立 <span
-class="math inline">\(|f_n(t)| \le 1\)</span>.
-换言之，这一无穷函数族到零函数的距离上限仅为 <span
-class="math inline">\(d(f_n, 0) = 1\)</span>，故而 <span
-class="math inline">\(A\)</span> 是一致有界集.</p>
-<p>接下来证明其非全有界性.
-我们借助正交分析的视角来衡量两两个体间的间距：对于任意两个正整数 <span
-class="math inline">\(m &gt; n \ge
-1\)</span>，在一致度量定义下，两函数之间的最大差值必然大于或等于其在
-<span class="math inline">\(L^2\)</span> 均方度量意义下的间距.
-由于正弦函数序列具备完好的正交性，易知 <span class="math inline">\(\|f_m
-- f_n\|_\infty \ge \|f_m - f_n\|_2 = 1\)</span>.
-此外，通过利用高低频振荡产生的错位，也能显式证明两不同函数之差的最大值永远被下界
-<span class="math inline">\(\delta = \sqrt{3}/2\)</span> 所严格托底.
-这也意味着集合 <span class="math inline">\(A\)</span>
-作为包含无穷多个函数的序列，其中的任意点列都因两两隔离而无法抽出一个基本列（Cauchy
-列），绝对不可能被有限个半径小于 <span
-class="math inline">\(\delta/2\)</span> 的开球覆盖.
-这一结论深刻展示了有界集由于正交性质，可以在连续函数空间中丧失全有界性.</p>
-<h2 id="助教提点">助教提点</h2>
-<p>至于为什么一道深刻考查“有限维与无穷维紧致性差异”的习题会被编排在这个位置，确实容易让人感到困惑。这或许是编者为了让同学们尽早打破欧氏空间的直觉束缚、提前建立对全有界性与紧致性的警惕；亦或是早年教学大纲对紧致性概念的编排顺序有所不同。但无论排版初衷为何，这道题留给我们的重要教益，在于<strong>有限维空间与无穷维空间在紧致性特征上有着本质的鸿沟</strong>。许多在有限维欧氏空间中看起来天经地义、直觉上显然成立的几何性质，一旦平移到无穷维空间中就会彻底失效。这也正是为什么我们需要系统学习<strong>泛函分析</strong>这门课程——它的学科核心之一，就是要引导我们摆脱对有限维直觉的依赖，利用更加严谨的分析语言和拓扑工具，在无穷维空间中重建几何与分析的理论大厦。</p>
-<p>在具体阅卷与考场作答方面，由于本题属于开放式证明题，不存在唯一的标准答案，因此评分标准不会拘泥于某一种特定构造，而是严格考量以下<strong>三个核心采分点</strong>：</p>
-<ol type="1">
-<li>是否清晰地说明了所选取的距离空间（或赋范空间）的具体背景，并准确写出了对应的度量形式
-<span class="math inline">\(d(x,y)\)</span>。</li>
-<li>是否通过计算或放缩，准确论证了所构造的集合全部落在某一个固定半径的有限开球之内。</li>
-<li>是否能在所选集合中找到一个含有无穷多元素的点列，并严格证明其中任意两点之间的距离恒大于某一<strong>正数常数</strong>
-<span class="math inline">\(\delta &gt;
-0\)</span>（即存在严正的分离下界）。</li>
-</ol>
-<p>只要在答题过程中完整且严密地阐述了上述三个核心步骤，即可满足本题的考查要求并获得满分。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2026/07/30/functional_exercises1-8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
