@@ -145,7 +145,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -209,7 +209,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/08/01/functional_exercises1-11/">
+    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/08/02/functional/functional_exercises1-13/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -227,7 +227,504 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/08/01/functional_exercises1-11/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.11</a>
+          <a href="/2026/08/02/functional/functional_exercises1-13/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.13</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-08-02 02:00:00 / 修改时间：03:40:52" itemprop="dateCreated datePublished" datetime="2026-08-02T02:00:00+08:00">2026-08-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A7%91%E6%99%AE%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">科普博客</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A7%91%E6%99%AE%E5%8D%9A%E5%AE%A2/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">泛函分析</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="习题题面">习题题面</h2>
+<p>设 <span class="math inline">\(F_1,F_2\)</span> 是距离空间 <span
+class="math inline">\(X\)</span> 中不相交的闭集，证明存在 <span
+class="math inline">\(X\)</span> 上的连续函数 <span
+class="math inline">\(f(x)\)</span>，使得当 <span
+class="math inline">\(x\in F_1\)</span> 时 <span
+class="math inline">\(f(x)=0\)</span>，当 <span
+class="math inline">\(x\in F_2\)</span> 时 <span
+class="math inline">\(f(x)=1\)</span>.</p>
+<h2 id="教材参考答案">教材参考答案</h2>
+<p>记 <span class="math inline">\(d(x,F_1)=\inf\limits_{y\in
+F_1}d(x,y)\)</span>，<span
+class="math inline">\(d(x,F_2)=\inf\limits_{y\in
+F_2}d(x,y)\)</span>，则</p>
+<p><span class="math display">\[
+d(x,F_1)+d(x,F_2)\neq0,
+\]</span></p>
+<p>因为不然必有 <span
+class="math inline">\(d(x,F_1)=d(x,F_2)=0\)</span>，由于 <span
+class="math inline">\(F_1,F_2\)</span> 是闭集，将有 <span
+class="math inline">\(F_1\cap F_2\neq\varnothing\)</span>，这与题设矛盾.
+命</p>
+<p><span class="math display">\[
+f(x)=\frac{d(x,F_1)}{d(x,F_1)+d(x,F_2)}\quad(x\in X),
+\]</span></p>
+<p>则由习题 12 的结果可知，<span class="math inline">\(f(x)\)</span>
+即为所要求的连续函数.</p>
+<h2 id="习题分析">习题分析</h2>
+<p>书接上回，在上一题中我们埋下过一个伏笔，距离泛函 <span
+class="math inline">\(d_A(x)=\inf_{y\in A}d(x,y)\)</span>
+有一个非常“因吹斯听”（interesting）的拓扑性质，即 <span
+class="math inline">\(d_A(x)=0\)</span> 的充要条件是 <span
+class="math inline">\(x\in\bar{A}\)</span>。特别地，当 <span
+class="math inline">\(A\)</span> 为闭集时，这就等价于 <span
+class="math inline">\(x\in A\)</span>。而本题已知 <span
+class="math inline">\(F_1\)</span> 和 <span
+class="math inline">\(F_2\)</span>
+都是闭集且互不相交，其中一个核心目标是，当 <span
+class="math inline">\(x\in F_1\)</span> 时，<span
+class="math inline">\(f(x)=0\)</span>。这就给我们提供了一个极其强烈的暗示：我们要找的函数一定与上一题的距离泛函脱不了干系。</p>
+<p>数学解题往往始于大胆的尝试，<strong><em>只要有不断坚持的衡心和耐心，就一定能够寻得真相，实现自我的价值</em></strong>。既然要求在
+<span class="math inline">\(F_1\)</span> 上为0，我们不妨果断地令函数为
+<span class="math inline">\(f(x) = d_1(x) = \inf_{y \in F_1}
+d(x,y)\)</span>，这样条件一瞬间就满足了。但条件二显得有些棘手：如何让点
+<span class="math inline">\(x\)</span> 跑到 <span
+class="math inline">\(F_2\)</span>
+里时，整个函数值恰好变成1？要知道，点在 <span
+class="math inline">\(F_2\)</span> 中移动时，它到 <span
+class="math inline">\(F_1\)</span> 的距离 <span
+class="math inline">\(d_1(x)\)</span>
+绝对是个不断变化的未知数，不一定恰好是1。这说明单靠一个距离函数是不够的，我们需要一种能把“<strong>任意常数强行拉回到1</strong>”的数学机制。</p>
+<p>这种机制大家其实早已烂熟于心。回想一下高等代数中，我们是如何把一个任意非零向量
+<span class="math inline">\(\mathbf{a}\)</span>
+变成单位向量的？没错，就是除以它自身的范数，即 <span
+class="math inline">\(\mathbf{e} =
+\frac{\mathbf{a}}{\|\mathbf{a}\|}\)</span>。这种“归一化（比例法）”技巧在数学分析中极其常用。顺着这个思路，答案就呼之欲出了：我们需要构造一个分母。当
+<span class="math inline">\(x\in F_2\)</span> 时，只要能让分子的 <span
+class="math inline">\(d_1(x)\)</span>
+与整个分母完全相等，比值自然就变成了1。再结合 <span
+class="math inline">\(x \in F_2 \implies d_2(x) = \inf_{y \in F_2}
+d(x,y) = 0\)</span> 的性质，我们只需在分母中加上 <span
+class="math inline">\(d_2(x)\)</span> 即可起到“牵制”作用。</p>
+<h2 id="标准解答">标准解答</h2>
+<p>令 <span class="math inline">\(d_1(x) = \inf_{y \in F_1}
+d(x,y)\)</span>， <span class="math inline">\(d_2(x) = \inf_{y \in F_2}
+d(x,y)\)</span>. 由习题 12 的结论已知，<span
+class="math inline">\(d_1(x)\)</span> 和 <span
+class="math inline">\(d_2(x)\)</span> 都是全空间 <span
+class="math inline">\(X\)</span> 上的连续实值函数.
+我们构造如下比例函数：</p>
+<p><span class="math display">\[
+f(x) = \frac{d_1(x)}{d_1(x) + d_2(x)} \quad (x \in X)
+\]</span></p>
+<p>首先，我们需要证明函数 <span class="math inline">\(f(x)\)</span>
+满足良定义，即分母处处不为0. 我们使用反证法. 假设存在某点 <span
+class="math inline">\(x \in X\)</span>，使得分母 <span
+class="math inline">\(d_1(x)+d_2(x)=0\)</span>. 由于距离泛函的非负性恒有
+<span class="math inline">\(d_1(x) \ge 0\)</span> 且 <span
+class="math inline">\(d_2(x) \ge 0\)</span>，若两者之和为 0，必有</p>
+<p><span class="math display">\[d_1(x) = 0 \text{ 且 } d_2(x) =
+0\]</span></p>
+<p>由 <span class="math inline">\(d_1(x) = \inf_{y \in F_1} d(x,y) =
+0\)</span> 可知，必定存在序列 <span class="math inline">\(\{y_n\}
+\subset F_1\)</span> 使得</p>
+<p><span class="math display">\[\lim_{n \to \infty} d(x, y_n) =
+0\]</span></p>
+<p>这说明点 <span class="math inline">\(x\)</span> 是集合 <span
+class="math inline">\(F_1\)</span> 的极限点. 又因已知 <span
+class="math inline">\(F_1\)</span>
+是闭集（闭集包含其所有极限点），故必有 <span class="math inline">\(x \in
+F_1\)</span>. 同理可推证出 <span class="math inline">\(x\in
+F_2\)</span>. 这导致 <span class="math inline">\(x\in F_1\cap
+F_2\)</span>，即 <span class="math inline">\(F_1\cap
+F_2\neq\emptyset\)</span>，这与题设中“<span class="math inline">\(F_1,
+F_2\)</span> 是不相交的闭集”的前提产生严重矛盾.
+由此可知假设不成立，对于任意的 <span class="math inline">\(x \in
+X\)</span>，分母 <span
+class="math inline">\(d_1(x)+d_2(x)&gt;0\)</span>，从而保证了函数 <span
+class="math inline">\(f(x)\)</span> 的良定义.</p>
+<p>在确认函数良定义之后，我们来探讨其连续性. 因为 <span
+class="math inline">\(d_1(x)\)</span> 和 <span
+class="math inline">\(d_2(x)\)</span>
+均为连续函数，根据分析学中的连续函数运算法则可知，两连续函数之和 <span
+class="math inline">\(d_1(x) + d_2(x)\)</span> 依然是连续的.
+同时，连续函数相除，在其分母不为0处也依然保持连续.
+由前文已证分母处处大于0，故推导出 <span
+class="math inline">\(f(x)\)</span> 是全空间 <span
+class="math inline">\(X\)</span> 上的连续函数.</p>
+<p>最后，我们验证该函数是否满足题目所要求的边界条件. 当 <span
+class="math inline">\(x \in F_1\)</span> 时，因点 <span
+class="math inline">\(x\)</span> 就在集合自身内，故 <span
+class="math inline">\(d_1(x) = 0\)</span>. 又因 <span
+class="math inline">\(F_1\cap F_2=\emptyset\)</span>，可知 <span
+class="math inline">\(x\notin F_2\)</span>，由闭集性质得到 <span
+class="math inline">\(d_2(x)&gt;0\)</span>. 此时代入函数定义式得到</p>
+<p><span class="math display">\[f(x) = \frac{0}{0 + d_2(x)} =
+0\]</span></p>
+<p>同理，当 <span class="math inline">\(x\in F_2\)</span> 时，有 <span
+class="math inline">\(d_2(x)=0\)</span>，且因 <span
+class="math inline">\(x\notin F_1\)</span> 推得 <span
+class="math inline">\(d_1(x)&gt;0\)</span>. 此时代入定义式即有</p>
+<p><span class="math display">\[f(x) = \frac{d_1(x)}{d_1(x) + 0} =
+1\]</span></p>
+<p>综上所述，构造的函数 <span class="math inline">\(f(x)\)</span>
+满足题目的一切要求.</p>
+<h2 id="助教提点">助教提点</h2>
+<p>接下来是拓展科普环节。实际上，这道看似简单的习题，是泛函分析与点集拓扑中一个极其著名的定理——<strong>Urysohn引理</strong>（<strong>乌雷松引理</strong>）在距离空间中的特例形式。它从根本上证明了“距离空间必然是正规空间（<span
+class="math inline">\(T_4\)</span>
+空间）”，并为后续泛函分析中大名鼎鼎的Tietze扩张定理（以及单位分解技术）奠定了绝对基石。如果大家对这背后的深刻拓扑内涵感兴趣，推荐翻阅普林斯顿大学
+Elias M. Stein 教授的《泛函分析》一书中关于 <span
+class="math inline">\(C(X)\)</span>
+对偶空间的精彩论述，<del>虽然我看不懂</del>。</p>
+<p>此外，思维活跃的同学可能会问，除了这个特定的构造，还有没有别的函数？答案是有的。比如说下边这个函数：</p>
+<p><span class="math display">\[
+g(x) = \frac{d_1(x)-d_2(x)}{d_1(x)+d_2(x)}
+\]</span></p>
+<p>这个函数实际上是我们构造出的 <span
+class="math inline">\(f(x)\)</span> 去做线性变换得到，即 <span
+class="math inline">\(g(x) = 1 -
+2f(x)\)</span>。而如果需要我们跳出下确界函数的框架，实际上只要满足“连续”且“<span
+class="math inline">\(f(x)=0 \iff x \in
+\bar{A}\)</span>”这两个核心条件，我们就可以利用平方构造、指数构造甚至现代分析学中的“磨光函数（卷积）”来捏出无数个符合条件的函数。但对于目前的学习阶段，利用下确界距离的“归一化构造”无疑是最直观、最优雅的。</p>
+<p>从期末考试的阅卷视角来看，若本题作为一道10分的期末大题，只要大家构造出符合题意本质的函数即可按步得分。具体的给分分布为：能够准确写出归一化的距离泛函表达占2分；利用闭集和不相交性质，严密反证分母
+<span class="math inline">\(d_1(x) + d_2(x) \neq 0\)</span>
+以证明函数良定义占2分；明确指出分子分母连续且分母不为零，利用运算法则得出总体连续占2分（需要特别提示的是，很多同学在作答时极易漏写连续性证明这一步，导致无谓失分）；最后，准确代入验证
+<span class="math inline">\(x\in F_1\)</span> 时的零点与 <span
+class="math inline">\(x\in F_2\)</span>
+时的单位点，这两个边界条件的验证分别占2分，共计4分。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/08/02/functional/functional_exercises1-12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Billyfu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BillyBlog">
+      <meta itemprop="description" content="原来还会有人看这里的吗？">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | BillyBlog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2026/08/02/functional/functional_exercises1-12/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.12</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-08-02 00:30:00 / 修改时间：03:40:37" itemprop="dateCreated datePublished" datetime="2026-08-02T00:30:00+08:00">2026-08-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A7%91%E6%99%AE%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">科普博客</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A7%91%E6%99%AE%E5%8D%9A%E5%AE%A2/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">泛函分析</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="习题题面">习题题面</h2>
+<p>设<span class="math inline">\((X,d)\)</span>是距离空间，<span
+class="math inline">\(A\subset X\)</span>，令</p>
+<p><span class="math display">\[
+f(x)=\inf\limits_{y\in A}d(x,y)\quad(x\in X)
+\]</span></p>
+<p>证明<span class="math inline">\(f(x)\)</span>是<span
+class="math inline">\(X\)</span>上的连续函数.</p>
+<h2 id="教材参考答案">教材参考答案</h2>
+<p>设 <span class="math inline">\(x_1,x_2\in X\)</span> ,则 <span
+class="math inline">\(\forall y\in A\)</span> .</p>
+<p><span class="math display">\[
+d(x_1,y)\leq d(x_1,x_2)+d(x_2,y),
+\]</span></p>
+<p>因此,</p>
+<p><span class="math display">\[
+\inf_{y\in A}d(x_1,y)\leq d(x_1, x_2)+\inf_{y\in A}d(x_2,y).
+\]</span></p>
+<p>类似地有</p>
+<p><span class="math display">\[
+\inf_{y\in A}d(x_2,y)\leq d(x_1,x_2)+\inf_{y\in A}d(x_1,y).
+\]</span></p>
+<p>所以</p>
+<p><span class="math display">\[
+\left| \inf_{y\in A}d(x_1,y)-\inf_{y\in A}d(x_2,y)\right|\leq
+d(x_1,x_2).
+\]</span></p>
+<p>由此可知,</p>
+<p><span class="math display">\[
+f(x)=\inf_{y\in A}d(x,y)\text{ 是 }X\text{ 上的连续函数.}
+\]</span></p>
+<h2 id="习题分析">习题分析</h2>
+<p>许久未见的课本参考答案终于回归了，我们终于又可以愉快得来对教材的答案来做
+<del>批判</del> 学习了。</p>
+<p>细读课本给出的解答，相信很多同学会感到一丝困惑。课本推导出的结论
+<span class="math inline">\(|f(x_1)-f(x_2)| \le
+d(x_1,x_2)\)</span>，似乎与我们熟知的连续函数定义并未直接对齐。回顾经典的
+<span class="math inline">\(\varepsilon-\delta\)</span>
+连续性定义，要求的是对于 <span class="math inline">\(\forall \varepsilon
+&gt; 0\)</span>，存在 <span class="math inline">\(\delta &gt;
+0\)</span>，使得当 <span class="math inline">\(d(x, x_0) \le
+\delta\)</span> 时，有 <span class="math inline">\(d_1(f(x), f(x_0))
+&lt;
+\varepsilon\)</span>。课本答案在得出绝对值不等式后便戛然而止，直接宣布函数连续，这实质上是一个严重的逻辑跳步。</p>
+<p>要跨过这个跳步，我们需要补全一个极其重要的背景视角：这个距离泛函
+<span class="math inline">\(f(x)\)</span> 本质上是一个由距离空间 <span
+class="math inline">\((X, d)\)</span> 映射到实数域 <span
+class="math inline">\((\mathbb{R}, d_1)\)</span>
+的函数。这意味着，目标空间的度量 <span class="math inline">\(d_1(f(x),
+f(x_0))\)</span> 正是传统数学分析中的绝对值距离 <span
+class="math inline">\(|f(x) - f(x_0)|\)</span>。</p>
+<p>理解了这一点，我们就豁然开朗了。课本最终推导出的不等式 <span
+class="math inline">\(|f(x_1)-f(x_2)| \le
+d(x_1,x_2)\)</span>，在泛函分析中拥有一个更为强大的名字，叫<strong>利普希茨连续</strong>。因为前方的系数为
+<span class="math inline">\(1\)</span>（即利普希茨常数 <span
+class="math inline">\(L=1\)</span>），这意味着函数值的波动永远不会超过自变量之间的距离。一旦拥有了这个强力的不等式，无论是利用
+<span class="math inline">\(\varepsilon-\delta\)</span> 语言（直接令
+<span class="math inline">\(\delta=\varepsilon\)</span>
+即可），还是利用序列连续性 <span class="math inline">\(\lim_{n \to
+\infty} f(x_n) = f(x)\)</span>
+配合夹逼定理，都能极其轻松地将连续性的证明彻底闭环。至于这道题前置不等式的推导，核心手法就是三角不等式与下确界（<span
+class="math inline">\(\inf\)</span>）的保号性操作。</p>
+<h2 id="标准解答">标准解答</h2>
+<p>由于教材参考答案在最后一步缺乏严谨的拓扑连续性过渡，以下提供补充完善后的两种标准证明论述.
+考场作答时，在推导出核心不等式后，任选一种过渡方式均可.</p>
+<p>设 <span class="math inline">\(x_1, x_2\)</span> 为度量空间 <span
+class="math inline">\(X\)</span> 中的任意两点. 针对集合 <span
+class="math inline">\(A\)</span> 中的<strong>任意</strong>一点 <span
+class="math inline">\(y \in
+A\)</span>，由距离空间的三角不等式公理恒有：</p>
+<p><span class="math display">\[
+d(x_1, y) \le d(x_1, x_2) + d(x_2, y)
+\]</span></p>
+<p>由于上述不等式对一切 <span class="math inline">\(y \in A\)</span>
+均成立，且 <span class="math inline">\(d(x_1, x_2)\)</span> 对于变量
+<span class="math inline">\(y\)</span>
+而言是固定的常数，我们对不等式两边同时关于 <span class="math inline">\(y
+\in A\)</span> 取下确界（<span
+class="math inline">\(\inf\)</span>），不等号方向保持不变：</p>
+<p><span class="math display">\[
+\inf_{y \in A} d(x_1, y) \le \inf_{y \in A} \big[ d(x_1, x_2) + d(x_2,
+y) \big] \\
+\inf_{y \in A} d(x_1, y) \le d(x_1, x_2) + \inf_{y \in A} d(x_2, y)
+\]</span></p>
+<p>根据函数定义 <span class="math inline">\(f(x) = \inf_{y \in A}
+d(x,y)\)</span>，上式即化为：</p>
+<p><span class="math display">\[
+f(x_1) \le d(x_1, x_2) + f(x_2)
+\]</span></p>
+<p>移项整理可得：</p>
+<p><span class="math display">\[
+f(x_1) - f(x_2) \le d(x_1, x_2) \quad \tag{1}
+\]</span></p>
+<p>同理，由于点 <span class="math inline">\(x_1\)</span> 与 <span
+class="math inline">\(x_2\)</span>
+在推导中的地位是对称的，互换两点位置即可完全对称地得到：</p>
+<p><span class="math display">\[
+f(x_2) - f(x_1) \le d(x_2, x_1)
+\]</span></p>
+<p>由距离的对称性公理 <span class="math inline">\(d(x_2, x_1) = d(x_1,
+x_2)\)</span>，上式可等价改写为：</p>
+<p><span class="math display">\[
+-(f(x_1) - f(x_2)) \le d(x_1, x_2) \quad \tag{2}
+\]</span></p>
+<p>综合 式(1) 与
+式(2)，我们得出了控制函数波动的全局绝对值核心不等式：</p>
+<p><span class="math display">\[
+|f(x_1) - f(x_2)| \le d(x_1, x_2)
+\]</span></p>
+<p>接下来利用该核心不等式，证明 <span
+class="math inline">\(f(x)\)</span> 在全空间上的连续性.</p>
+<h3 id="证法一varepsilon-delta-定义法">证法一：<span
+class="math inline">\(\varepsilon-\delta\)</span> 定义法</h3>
+<p>函数 <span class="math inline">\(f\)</span> 是由度量空间 <span
+class="math inline">\((X, d)\)</span> 到实数空间 <span
+class="math inline">\((\mathbb{R}, d_1)\)</span>
+的映射，其中实数域的默认度量为 <span class="math inline">\(d_1(a,b) = |a
+- b|\)</span>.</p>
+<p>任取空间 <span class="math inline">\(X\)</span> 中的固定点 <span
+class="math inline">\(x_0\)</span>，并任给精度 <span
+class="math inline">\(\varepsilon &gt; 0\)</span>. 我们直接取定 <span
+class="math inline">\(\delta = \varepsilon &gt; 0\)</span>.</p>
+<p>当 <span class="math inline">\(X\)</span> 中的点 <span
+class="math inline">\(x\)</span> 满足 <span class="math inline">\(d(x,
+x_0) &lt; \delta\)</span> 时，根据上述推导的核心不等式，必然有：</p>
+<p><span class="math display">\[
+d_1(f(x), f(x_0)) = |f(x) - f(x_0)| \le d(x, x_0) &lt; \delta =
+\varepsilon
+\]</span></p>
+<p>这完美满足了映射在点 <span class="math inline">\(x_0\)</span>
+处连续的 <span class="math inline">\(\varepsilon-\delta\)</span>
+定义条件. 由于 <span class="math inline">\(x_0\)</span> 为任意选取，故
+<span class="math inline">\(f(x)\)</span> 是 <span
+class="math inline">\(X\)</span> 上的连续函数.</p>
+<h3 id="证法二序列连续性法">证法二：序列连续性法</h3>
+<p>在度量空间中，函数的处处连续等价于序列连续.</p>
+<p>任取 <span class="math inline">\(X\)</span> 中的序列 <span
+class="math inline">\(\{x_n\}\)</span>，假设其在 <span
+class="math inline">\(X\)</span> 中收敛于点 <span
+class="math inline">\(x\)</span>，即当 <span class="math inline">\(n \to
+\infty\)</span> 时，<span class="math inline">\(\lim_{n \to \infty}
+d(x_n, x) = 0\)</span>.</p>
+<p>将序列项 <span class="math inline">\(x_n\)</span> 与极限点 <span
+class="math inline">\(x\)</span> 代入核心不等式中，得：</p>
+<p><span class="math display">\[
+0 \le |f(x_n) - f(x)| \le d(x_n, x)
+\]</span></p>
+<p>对上式两端同时取 <span class="math inline">\(n \to \infty\)</span>
+的极限. 由于 <span class="math inline">\(d(x_n, x) \to
+0\)</span>，根据数列极限的夹逼定理（Squeeze Theorem）立刻可知：</p>
+<p><span class="math display">\[
+\lim_{n \to \infty} |f(x_n) - f(x)| = 0 \implies \lim_{n \to \infty}
+f(x_n) = f(x)
+\]</span></p>
+<p>这证明了极限运算与函数映射可以交换顺序，故 <span
+class="math inline">\(f(x)\)</span> 处处连续.</p>
+<h2 id="助教提点">助教提点</h2>
+<p>这道题目虽然证明篇幅不长，但它所揭示的数学内涵却非常丰富。正如我们在习题分析中所指出的，课本答案实际上证明了一个极其强大的性质：函数
+<span class="math inline">\(f(x)\)</span> 满足常数 <span
+class="math inline">\(L=1\)</span>
+的<strong>利普西茨连续（Lipschitz连续）</strong>条件。在分析学的连续性阶梯中，Lipschitz连续是比普通连续、甚至比一致连续都要强烈的多的“光滑性”条件。大家在标准解答中也可以看到，我们最终选取的
+<span class="math inline">\(\delta = \varepsilon\)</span>，这个 <span
+class="math inline">\(\delta\)</span> 的取值完全不依赖于基准点 <span
+class="math inline">\(x_0\)</span>
+的位置，这正是函数在全空间上达到“一致连续”的铁证。</p>
+<p>另外，大家务必要把 <span class="math inline">\(f(x)=\inf_{y\in
+A}d(x,y)\)</span>
+这个函数给深深得刻进DNA里。这个距离泛函蕴含着一个极为深刻的几何拓扑性质，即
+<span class="math inline">\(f(x)=0\)</span> 的充要条件是 <span
+class="math inline">\(x\in\bar{A}\)</span>（即 <span
+class="math inline">\(x\)</span> 属于集合 <span
+class="math inline">\(A\)</span> 的闭包）。特别地，如果 <span
+class="math inline">\(A\)</span> 本身就是一个闭集，那么 <span
+class="math inline">\(f(x)=0 \iff x\in
+A\)</span>。这个性质是将拓扑关系代数化的超级利器，我们在下一道习题中立刻就会大显身手，大家可以提前思考一下。</p>
+<p>从期末考试的阅卷视角来看，如果这是一道满分为5分的证明题，踩分点将出现极为明确的“三二定律”划分：</p>
+<ul>
+<li>Lipschitz不等式推导（3分）：能够熟练使用三角不等式，并利用下确界（<span
+class="math inline">\(\inf\)</span>）的保号性质，严密推导出 <span
+class="math inline">\(|f(x_1) - f(x_2)| \le d(x_1, x_2)\)</span>。</li>
+<li>连续性定义的严格过渡（2分）：完成了Lipschitz条件的推导，必须明确指出函数是向实数域
+<span class="math inline">\(\mathbb{R}\)</span> 的映射，并利用 <span
+class="math inline">\(\varepsilon-\delta\)</span>
+语言或序列极限的夹逼定理，将Lipschitz不等式严丝合缝地扣回到连续性的原始定义上。缺乏这一步过渡，在严格的阅卷中必定会被扣除2分的逻辑严谨分。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/08/01/functional/functional_exercises1-11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Billyfu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BillyBlog">
+      <meta itemprop="description" content="原来还会有人看这里的吗？">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | BillyBlog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2026/08/01/functional/functional_exercises1-11/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.11</a>
         </h2>
 
         <div class="post-meta-container">
@@ -269,7 +766,7 @@
 <p>证明如果距离空间是可分的，则它的任意子空间也是可分的；反之，如果距离空间不可分，它的子空间是否也不可分？</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2026/08/01/functional_exercises1-11/#more" rel="contents">
+              <a class="btn" href="/2026/08/01/functional/functional_exercises1-11/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -300,7 +797,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/08/01/functional_exercises1-10/">
+    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/08/01/functional/functional_exercises1-10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -318,7 +815,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/08/01/functional_exercises1-10/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.10</a>
+          <a href="/2026/08/01/functional/functional_exercises1-10/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.10</a>
         </h2>
 
         <div class="post-meta-container">
@@ -360,7 +857,7 @@
 <p>证明距离空间的完备子空间是闭子空间.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2026/08/01/functional_exercises1-10/#more" rel="contents">
+              <a class="btn" href="/2026/08/01/functional/functional_exercises1-10/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -391,7 +888,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/07/31/functional_exercises1-9/">
+    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/07/31/functional/functional_exercises1-9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -409,7 +906,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/07/31/functional_exercises1-9/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.9</a>
+          <a href="/2026/07/31/functional/functional_exercises1-9/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.9</a>
         </h2>
 
         <div class="post-meta-container">
@@ -451,7 +948,7 @@
 <p>证明距离空间中每一个Cauchy列是有界集.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2026/07/31/functional_exercises1-9/#more" rel="contents">
+              <a class="btn" href="/2026/07/31/functional/functional_exercises1-9/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -482,7 +979,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/07/30/functional_exercises1-8/">
+    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/07/30/functional/functional_exercises1-8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -500,7 +997,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/07/30/functional_exercises1-8/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.8</a>
+          <a href="/2026/07/30/functional/functional_exercises1-8/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.8</a>
         </h2>
 
         <div class="post-meta-container">
@@ -542,7 +1039,7 @@
 <p>试举一例说明有界集不是全有界集.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2026/07/30/functional_exercises1-8/#more" rel="contents">
+              <a class="btn" href="/2026/07/30/functional/functional_exercises1-8/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -573,7 +1070,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/07/29/functional_exercises1-7/">
+    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/07/29/functional/functional_exercises1-7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -591,7 +1088,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/07/29/functional_exercises1-7/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.7</a>
+          <a href="/2026/07/29/functional/functional_exercises1-7/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.7</a>
         </h2>
 
         <div class="post-meta-container">
@@ -640,7 +1137,7 @@
 中，按距离收敛等价于按坐标收敛.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2026/07/29/functional_exercises1-7/#more" rel="contents">
+              <a class="btn" href="/2026/07/29/functional/functional_exercises1-7/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -671,7 +1168,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/07/25/functional_exercises1-6/">
+    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/07/25/functional/functional_exercises1-6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -689,7 +1186,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/07/25/functional_exercises1-6/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.6</a>
+          <a href="/2026/07/25/functional/functional_exercises1-6/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.6</a>
         </h2>
 
         <div class="post-meta-container">
@@ -731,7 +1228,7 @@
 <p>证明在距离空间中，如果一个半径为7的开球包含在一个半径为3的开球中，则这两个球重合.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2026/07/25/functional_exercises1-6/#more" rel="contents">
+              <a class="btn" href="/2026/07/25/functional/functional_exercises1-6/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -762,7 +1259,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/07/25/functional_exercises1-5/">
+    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/07/25/functional/functional_exercises1-5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -780,7 +1277,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/07/25/functional_exercises1-5/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.5</a>
+          <a href="/2026/07/25/functional/functional_exercises1-5/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.5</a>
         </h2>
 
         <div class="post-meta-container">
@@ -822,7 +1319,7 @@
 <p>在距离空间中，一个半径为4的开球能否成为一个半径为3的开球的真子集？</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2026/07/25/functional_exercises1-5/#more" rel="contents">
+              <a class="btn" href="/2026/07/25/functional/functional_exercises1-5/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -853,7 +1350,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/07/24/functional_exercises1-4/">
+    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/07/24/functional/functional_exercises1-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -871,7 +1368,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/07/24/functional_exercises1-4/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.4</a>
+          <a href="/2026/07/24/functional/functional_exercises1-4/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.4</a>
         </h2>
 
         <div class="post-meta-container">
@@ -925,214 +1422,7 @@ class="math display">\[d(x,y)=\max\limits_{\left|t\right|=1}\left|x(t)-y(t)\righ
 <p>证明 <span class="math inline">\((X,d)\)</span> 是距离空间.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2026/07/24/functional_exercises1-4/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/07/24/functional_exercises1-3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Billyfu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BillyBlog">
-      <meta itemprop="description" content="原来还会有人看这里的吗？">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | BillyBlog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/07/24/functional_exercises1-3/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.3</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-07-24 23:00:00" itemprop="dateCreated datePublished" datetime="2026-07-24T23:00:00+08:00">2026-07-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-07-29 20:10:48" itemprop="dateModified" datetime="2026-07-29T20:10:48+08:00">2026-07-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%A7%91%E6%99%AE%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">科普博客</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%A7%91%E6%99%AE%E5%8D%9A%E5%AE%A2/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">泛函分析</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="习题题面">习题题面</h2>
-<p>设 <span class="math inline">\(d_1,d_2,...,d_m,...\)</span> 是集
-<span class="math inline">\(X\)</span> 上的距离，证明：</p>
-<ul>
-<li><span class="math inline">\(d=\sup\limits_{1 \leq i \leq
-m}d_i\)</span></li>
-<li><span
-class="math inline">\(d=\sqrt{d_1^2+d_2^2+...+d_m^2}\)</span></li>
-<li><span class="math inline">\(\displaystyle
-d=\sum_{k=1}^{\infty}\frac{1}{2^k}\cdot\frac{d_k}{1+d_k}\)</span></li>
-</ul>
-<p>中的每一个也是 <span class="math inline">\(X\)</span> 上的距离.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2026/07/24/functional_exercises1-3/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/07/24/functional_exercises1-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Billyfu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BillyBlog">
-      <meta itemprop="description" content="原来还会有人看这里的吗？">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | BillyBlog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/07/24/functional_exercises1-2/" class="post-title-link" itemprop="url">泛函分析习题讲解 习题1.2</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-07-24 22:30:00" itemprop="dateCreated datePublished" datetime="2026-07-24T22:30:00+08:00">2026-07-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-07-25 04:29:01" itemprop="dateModified" datetime="2026-07-25T04:29:01+08:00">2026-07-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%A7%91%E6%99%AE%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">科普博客</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%A7%91%E6%99%AE%E5%8D%9A%E5%AE%A2/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">泛函分析</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="习题题面">习题题面</h2>
-<p>证明如果 <span class="math inline">\(d\)</span> 是集 <span
-class="math inline">\(X\)</span> 上的距离，则 <span
-class="math inline">\(\displaystyle d_1=\frac{d}{1+d}\)</span> 也是
-<span class="math inline">\(X\)</span> 上的距离.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2026/07/24/functional_exercises1-2/#more" rel="contents">
+              <a class="btn" href="/2026/07/24/functional/functional_exercises1-4/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>

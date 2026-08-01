@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"billyfu.top","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="习题题面 证明如果 \(d\) 是集 \(X\) 上的距离，则 \(\displaystyle d_1&#x3D;\frac{d}{1+d}\) 也是 \(X\) 上的距离.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="泛函分析习题讲解 习题1.2">
+<meta property="og:url" content="https://billyfu.top/2026/07/24/functional/functional_exercises1-2/index.html">
+<meta property="og:site_name" content="BillyBlog">
+<meta property="og:description" content="习题题面 证明如果 \(d\) 是集 \(X\) 上的距离，则 \(\displaystyle d_1&#x3D;\frac{d}{1+d}\) 也是 \(X\) 上的距离.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-07-24T14:30:00.000Z">
+<meta property="article:modified_time" content="2026-07-24T20:29:01.564Z">
+<meta property="article:author" content="Billyfu">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://billyfu.top/2026/07/24/functional/functional_exercises1-2/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://billyfu.top/2026/07/24/functional/functional_exercises1-2/","path":"2026/07/24/functional/functional_exercises1-2/","title":"泛函分析习题讲解 习题1.2"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>泛函分析习题讲解 习题1.2 | BillyBlog</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">BillyBlog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-版权"><a href="/copyright/" rel="section"><i class="fa fa-copyright fa-fw"></i>版权</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%A0%E9%A2%98%E9%A2%98%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">习题题面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%99%E6%9D%90%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text">教材参考答案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%A0%E9%A2%98%E5%88%86%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">习题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E8%A7%A3%E7%AD%94"><span class="nav-number">4.</span> <span class="nav-text">标准解答</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A9%E6%95%99%E6%8F%90%E7%82%B9"><span class="nav-number">5.</span> <span class="nav-text">助教提点</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Billyfu"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Billyfu</p>
+  <div class="site-description" itemprop="description">原来还会有人看这里的吗？</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Billiefu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Billiefu" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/2011537659?spm_id_from=333.1007.0.0" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;2011537659?spm_id_from&#x3D;333.1007.0.0" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:futszkok@gmail.com" title="邮箱 → mailto:futszkok@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>邮箱</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:futk@mail2.sysu.edu.cn" title="工作邮箱 → mailto:futk@mail2.sysu.edu.cn" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>工作邮箱</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://github.com/" title="https:&#x2F;&#x2F;github.com" rel="noopener" target="_blank">GitHub</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://www.sysu.edu.cn/" title="https:&#x2F;&#x2F;www.sysu.edu.cn" rel="noopener" target="_blank">中山大学</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://cse.sysu.edu.cn/" title="https:&#x2F;&#x2F;cse.sysu.edu.cn" rel="noopener" target="_blank">中山大学计算机学院</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/07/24/functional/functional_exercises1-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Billyfu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BillyBlog">
+      <meta itemprop="description" content="原来还会有人看这里的吗？">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="泛函分析习题讲解 习题1.2 | BillyBlog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          泛函分析习题讲解 习题1.2
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2026-07-24 22:30:00" itemprop="dateCreated datePublished" datetime="2026-07-24T22:30:00+08:00">2026-07-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-07-25 04:29:01" itemprop="dateModified" datetime="2026-07-25T04:29:01+08:00">2026-07-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A7%91%E6%99%AE%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">科普博客</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A7%91%E6%99%AE%E5%8D%9A%E5%AE%A2/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">泛函分析</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="习题题面">习题题面</h2>
+<p>证明如果 <span class="math inline">\(d\)</span> 是集 <span
+class="math inline">\(X\)</span> 上的距离，则 <span
+class="math inline">\(\displaystyle d_1=\frac{d}{1+d}\)</span> 也是
+<span class="math inline">\(X\)</span> 上的距离.</p>
+<span id="more"></span>
+<h2 id="教材参考答案">教材参考答案</h2>
+<p><span class="math inline">\(d\left({x, y}\right)\geq0\)</span> 且
+<span class="math inline">\(d\left({x, y}\right)=0\)</span>，当且仅当
+<span class="math inline">\(x=y\)</span>. <span
+class="math inline">\(d\left({x, y}\right)=d\left({y, x}\right)\)</span>
+显然. 其次，由于 <span class="math inline">\(\displaystyle \frac{d}{1 +
+d}\)</span> 关于 <span class="math inline">\(d\)</span>
+是递增的（参见例1.1.3）</p>
+<p><span class="math display">\[
+\begin{aligned}
+{d}_{1}\left( {x, y}\right) &amp;= \frac{d\left( {x, y}\right) }{1 +
+d\left( {x, y}\right) } \leq  \frac{d\left( {x, z}\right)  + d\left( {z,
+y}\right) }{1 + d\left( {x, z}\right)  + d\left( {z, y}\right) } \\
+&amp;\leq  \frac{d\left( {x, z}\right) }{1 + d\left( {x, z}\right)  +
+d\left( {z, y}\right) } + \frac{d\left( {z, y}\right) }{1 + d\left( {x,
+z}\right)  + d\left( {z, y}\right) } \\
+&amp;\leq  \frac{d\left( {x, z}\right) }{1 + d\left( {x, z}\right) } +
+\frac{d\left( {z, y}\right) }{1 + d\left( {z, y}\right) } =
+{d}_{1}\left( {x, z}\right)  + {d}_{1}\left( {z, y}\right).
+\end{aligned}
+\]</span></p>
+<h2 id="习题分析">习题分析</h2>
+<p>这道题所展示的距离构造方法（即 <span class="math inline">\(d_1 =
+\frac{d}{1+d}\)</span>），在众多度量空间理论中具有极为特殊的地位。它不仅是后续构造实数列空间
+<span class="math inline">\(s\)</span> 和可测函数空间 <span
+class="math inline">\(S\)</span>
+距离度量的核心引理，更揭示了一个深刻的拓扑性质，即<strong>任何一个距离空间都可以等价地转化为一个有界距离空间</strong>。这为我们后续的学习做了一个非常有用的铺垫。</p>
+<p>关于本题的书面解答，教材给出的“单调函数放缩法”极其优雅且经典。但作为初学者，在独立书写证明时，务必注意以下两处细节以保证逻辑的严密性：</p>
+<ul>
+<li><strong>拒绝滥用“显然”：</strong>
+教材虽然一笔带过，但在作业和考试中，我们需要明确写出：因为 <span
+class="math inline">\(d \ge 0\)</span>，所以分母 <span
+class="math inline">\(1+d &gt; 0\)</span>，从而保证了 <span
+class="math inline">\(d_1\)</span> 的非负性与同一性；同理，由 <span
+class="math inline">\(d(x,y)=d(y,x)\)</span>
+直接代入定义式即可得到对称性。这一步推导虽短，但不应省略。</li>
+<li><strong>补全单调性证明：</strong> 教材提到“<span
+class="math inline">\(\frac{d}{1+d}\)</span> 关于 <span
+class="math inline">\(d\)</span>
+是递增的”，这一结论并不直观。在严谨的答卷中，建议通过求导或简单的代数变形（如
+<span class="math inline">\(\frac{d}{1+d} = 1 -
+\frac{1}{1+d}\)</span>）来简要证明该函数的单调递增性，使逻辑闭环。</li>
+</ul>
+<p>此外，除了教材中利用单调函数放缩的技巧外，对于最困难的“三角不等式”证明，我们还可以采用一种名为“纯代数法（通分法）”的技巧硬解。这种方法硬桥硬马，不依赖函数单调性的前置结论，同样极其绝妙。下面我们将完整展现这两种证明方法的完整证明过程。</p>
+<h2 id="标准解答">标准解答</h2>
+<p>要证明 <span class="math inline">\(d_1\)</span> 是 <span
+class="math inline">\(X\)</span>
+上的距离，需验证非负性与同一性、对称性以及三角不等式.</p>
+<p>首先证明非负性与同一性. 因为 <span class="math inline">\(d\)</span>
+是距离，故 <span class="math inline">\(d(x,y)\ge 0\)</span>，从而分母
+<span class="math inline">\(1+d(x,y)&gt;0\)</span>，所以 <span
+class="math inline">\(d_1(x,y)=\frac{d(x,y)}{1+d(x,y)}\ge0\)</span>，并且
+<span class="math inline">\(d_1(x,y) = 0 \iff d(x,y) = 0 \iff x =
+y\)</span>.</p>
+<p>其次证明对称性. 由 <span class="math inline">\(d(x,y) =
+d(y,x)\)</span> 可直接得出：</p>
+<p><span class="math display">\[
+d_1(x,y) = \frac{d(x,y)}{1+d(x,y)} = \frac{d(y,x)}{1+d(y,x)} = d_1(y,x)
+\]</span></p>
+<p>最后证明三角不等式. 为了书写简便，我们设 <span
+class="math inline">\(a=d(x,y)\)</span>，<span
+class="math inline">\(b=d(x,z)\)</span>，<span
+class="math inline">\(c=d(z,y)\)</span>. 因为 <span
+class="math inline">\(d\)</span> 是 <span
+class="math inline">\(X\)</span> 上的距离，满足三角不等式，故 <span
+class="math inline">\(a,b,c \ge 0\)</span> 且 <span
+class="math inline">\(a \le b+c\)</span>. 我们需要证明：<span
+class="math inline">\(d_1(x,y) \le d_1(x,z) + d_1(z,y)\)</span>.
+这里给出两种严密的证明方法：</p>
+<p><strong>证法一：单调函数放缩法</strong></p>
+<p>构造函数 <span class="math inline">\(f(t)=\frac{t}{1+t}\
+(t\ge0)\)</span>. 将函数进行代数变形：<span
+class="math inline">\(f(t)=1-\frac{1}{1+t}\)</span>. 由于当 <span
+class="math inline">\(t \ge 0\)</span> 时，<span
+class="math inline">\(1+t\)</span> 严格单调递增，故 <span
+class="math inline">\(\frac{1}{1+t}\)</span> 严格单调递减，从而 <span
+class="math inline">\(f(t)\)</span> 是严格单调递增函数.</p>
+<p>（此处也可对 <span class="math inline">\(f(t)\)</span> 求导，由于
+<span class="math inline">\(f&#39;(t) = \frac{1}{(1+t)^2} &gt;
+0\)</span>，同样可证单调性）</p>
+<p>因为已知 <span class="math inline">\(a \le b+c\)</span>，利用 <span
+class="math inline">\(f(t)\)</span> 的单调递增性，可得：</p>
+<p><span class="math display">\[
+\begin{aligned}
+d_1(x,y) = \frac{a}{1+a} = f(a) &amp;\le f(b+c) = \frac{b+c}{1+b+c} \\
+&amp;= \frac{b}{1+b+c} + \frac{c}{1+b+c} \\
+&amp;\le \frac{b}{1+b} + \frac{c}{1+c} = d_1(x,z) + d_1(z,y)
+\end{aligned}
+\]</span></p>
+<p>原不等式得证.</p>
+<p><strong>证法二：纯代数法（通分法）</strong></p>
+<p>在已知 <span class="math inline">\(a \le b+c\)</span> 且 <span
+class="math inline">\(a,b,c \ge 0\)</span>
+的前提下，证明等价转换为：</p>
+<p><span class="math display">\[
+\frac{a}{1+a} \le \frac{b}{1+b} + \frac{c}{1+c}
+\]</span></p>
+<p>由于 <span class="math inline">\(a,b,c \ge
+0\)</span>，所有的分母均严格大于零. 我们直接将不等式右侧通分：</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{b}{1+b} + \frac{c}{1+c} &amp;= \frac{b(1+c)+c(1+b)}{(1+b)(1+c)} \\
+&amp;= \frac{b+bc+c+bc}{1+b+c+bc} \\
+&amp;= \frac{b+c+2bc}{1+b+c+bc}
+\end{aligned}
+\]</span></p>
+<p>此时问题转化为，只需证明：</p>
+<p><span class="math display">\[
+\frac{a}{1+a} \le \frac{b+c+2bc}{1+b+c+bc}
+\]</span></p>
+<p>因为等号两侧的分母均为正数，我们可以通过交叉相乘消除分母，即证：</p>
+<p><span class="math display">\[
+a(1+b+c+bc) \le (1+a)(b+c+2bc)
+\]</span></p>
+<p>将等式两侧分别展开：</p>
+<p><span class="math display">\[
+a + ab + ac + abc \le b + c + 2bc + ab + ac + 2abc
+\]</span></p>
+<p>化简，消去等式两边相同的 <span class="math inline">\(ab\)</span> 和
+<span class="math inline">\(ac\)</span> 项：</p>
+<p><span class="math display">\[
+a + abc \le b + c + 2bc + 2abc
+\]</span></p>
+<p>移项整理，即可得到：</p>
+<p><span class="math display">\[
+a \le b + c + 2bc + abc
+\]</span></p>
+<p>根据题设已知 <span class="math inline">\(a \le b+c\)</span>，且由
+<span class="math inline">\(b,c \ge 0\)</span> 可推导得出 <span
+class="math inline">\(2bc+abc \ge 0\)</span>.
+因此，我们可以得到清晰的放缩链条：</p>
+<p><span class="math display">\[
+a \le b+c \le b+c+2bc+abc
+\]</span></p>
+<p>上述最终的不等式显然成立。由于所有推导步骤都是可逆的同解变形，故原三角不等式得证.</p>
+<h2 id="助教提点">助教提点</h2>
+<p>这道题实际上在《数学分析》的习题中大家可能就已经见过。作为一道基础性的练习，它本身的计算推导并不复杂，按部就班即可完成。但这道题背后蕴含的泛函思想却极为深刻，也就是我们在习题分析当中所提到的那样，它证明了<strong>任何一个距离空间都可以等价地转化为一个有界距离空间</strong>。</p>
+<p>这是一个极其强大的“武器”。当我们需要将无穷多个空间进行组合（例如构造无穷维乘积空间），或者整合无穷多个半范数时，原有的距离若直接累加，极易发散至无穷大导致原有的分析工具失效。此时，我们就可以利用这种有界距离的构造方式，将无穷大的风险“强行截断”。更为精妙的是，由于这种映射是严格单调的（一一映射），它完美保留了原空间的拓扑结构。这就意味着，我们在新构造的有界空间中研究出的收敛性等性质，完全等价于原空间的性质（例如在课堂当中提到的
+<span class="math inline">\(s\)</span>
+空间）。在未来的空间构造与理论研究中，大家会反复看到这个技巧的身影。</p>
+<p>回到题目解答本身，如果这是一道满分为10分的作业题，由于整体推导不难，得分的区分度将主要集中在“逻辑闭环”上。我的评分细则会如下设置：</p>
+<ul>
+<li>非负性、同一性与对称性（4分）：完整写出非负性与同一性（2分），以及对称性（2分）的推导。此处不能仅用一句“显然”带过，必须明确指出分母恒正的前提。</li>
+<li>三角不等式（6分）：这是本题的核心得分点，根据所选证法不同，考察侧重点如下：
+<ul>
+<li>若使用证法一（单调函数放缩法）：明确指出并严谨证明辅助函数 <span
+class="math inline">\(f(t)=\frac{t}{1+t}\)</span>
+的单调递增性（得2分，这是最容易因滥用“显然”而失分的地方）；正确运用单调性完成最终的放缩推导（得4分）。</li>
+<li>若使用证法二（纯代数法）：逻辑链条需要清晰严密。成功通过通分等价构造出中间的多项式不等式结论（得2分）；完整证明该中间结论成立，并指明所有同解变形步骤可逆（得4分）。</li>
+</ul></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Billyfu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://billyfu.top/2026/07/24/functional/functional_exercises1-2/" title="泛函分析习题讲解 习题1.2">https://billyfu.top/2026/07/24/functional/functional_exercises1-2/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/07/24/functional/functional_exercises1-1/" rel="prev" title="泛函分析习题讲解 习题1.1">
+                  <i class="fa fa-angle-left"></i> 泛函分析习题讲解 习题1.1
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2026/07/24/functional/functional_exercises1-3/" rel="next" title="泛函分析习题讲解 习题1.3">
+                  泛函分析习题讲解 习题1.3 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2025-06 – 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">傅祉珏 (FU TszKok) <br> 博客代码开源遵循 AGPL-3.0 协议 | 所有博文遵循 CC BY-NC-ND 4.0 协议，未经明确书面授权，严禁任何形式的商业转载、洗稿或用于牟利。</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
