@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"billyfu.top","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="习题题面 设 \(X\) 是紧距离空间，\(T\) 是 \(X\) 上到自身的映射且满足条件：对任意 \(x,y\in X\)，当 \(x\neq y\) 时，\(d(Tx,Ty)&lt;d(x,y)\). 证明 \(T\) 在 \(X\) 上有惟一不动点.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="泛函分析习题讲解 习题1.20">
+<meta property="og:url" content="https://billyfu.top/2026/08/20/functional/functional_exercises1-20/index.html">
+<meta property="og:site_name" content="BillyBlog">
+<meta property="og:description" content="习题题面 设 \(X\) 是紧距离空间，\(T\) 是 \(X\) 上到自身的映射且满足条件：对任意 \(x,y\in X\)，当 \(x\neq y\) 时，\(d(Tx,Ty)&lt;d(x,y)\). 证明 \(T\) 在 \(X\) 上有惟一不动点.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-08-20T12:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-31T16:05:59.062Z">
+<meta property="article:author" content="Billyfu">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://billyfu.top/2026/08/20/functional/functional_exercises1-20/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://billyfu.top/2026/08/20/functional/functional_exercises1-20/","path":"2026/08/20/functional/functional_exercises1-20/","title":"泛函分析习题讲解 习题1.20"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>泛函分析习题讲解 习题1.20 | BillyBlog</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">BillyBlog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-版权"><a href="/copyright/" rel="section"><i class="fa fa-copyright fa-fw"></i>版权</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%A0%E9%A2%98%E9%A2%98%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">习题题面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%99%E6%9D%90%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text">教材参考答案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%A0%E9%A2%98%E5%88%86%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">习题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E8%A7%A3%E7%AD%94"><span class="nav-number">4.</span> <span class="nav-text">标准解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%81%E6%B3%95%E4%B8%80%E6%9E%81%E5%80%BC%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">证法一：极值法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%81%E6%B3%95%E4%BA%8C%E5%BA%8F%E5%88%97%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text">证法二：序列法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A9%E6%95%99%E6%8F%90%E7%82%B9"><span class="nav-number">5.</span> <span class="nav-text">助教提点</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Billyfu"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Billyfu</p>
+  <div class="site-description" itemprop="description">原来还会有人看这里的吗？</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Billiefu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Billiefu" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/2011537659?spm_id_from=333.1007.0.0" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;2011537659?spm_id_from&#x3D;333.1007.0.0" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:futszkok@gmail.com" title="邮箱 → mailto:futszkok@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>邮箱</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:futk@mail2.sysu.edu.cn" title="工作邮箱 → mailto:futk@mail2.sysu.edu.cn" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>工作邮箱</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://github.com/" title="https:&#x2F;&#x2F;github.com" rel="noopener" target="_blank">GitHub</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://www.sysu.edu.cn/" title="https:&#x2F;&#x2F;www.sysu.edu.cn" rel="noopener" target="_blank">中山大学</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://cse.sysu.edu.cn/" title="https:&#x2F;&#x2F;cse.sysu.edu.cn" rel="noopener" target="_blank">中山大学计算机学院</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/08/20/functional/functional_exercises1-20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Billyfu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BillyBlog">
+      <meta itemprop="description" content="原来还会有人看这里的吗？">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="泛函分析习题讲解 习题1.20 | BillyBlog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          泛函分析习题讲解 习题1.20
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2026-08-20 20:00:00" itemprop="dateCreated datePublished" datetime="2026-08-20T20:00:00+08:00">2026-08-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-09-01 00:05:59" itemprop="dateModified" datetime="2026-09-01T00:05:59+08:00">2026-09-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A7%91%E6%99%AE%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">科普博客</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A7%91%E6%99%AE%E5%8D%9A%E5%AE%A2/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">泛函分析</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="习题题面">习题题面</h2>
+<p>设 <span class="math inline">\(X\)</span> 是紧距离空间，<span
+class="math inline">\(T\)</span> 是 <span
+class="math inline">\(X\)</span> 上到自身的映射且满足条件：对任意 <span
+class="math inline">\(x,y\in X\)</span>，当 <span
+class="math inline">\(x\neq y\)</span> 时，<span
+class="math inline">\(d(Tx,Ty)&lt;d(x,y)\)</span>. 证明 <span
+class="math inline">\(T\)</span> 在 <span
+class="math inline">\(X\)</span> 上有惟一不动点.</p>
+<span id="more"></span>
+<h2 id="教材参考答案">教材参考答案</h2>
+<p>由给定条件，显然 <span class="math inline">\(T\)</span> 是 <span
+class="math inline">\(X\)</span> 上的连续映射，因此 <span
+class="math inline">\(d(Tx,x)\)</span>，<span class="math inline">\(x\in
+X\)</span> 是 <span class="math inline">\(x\)</span> 的连续函数. 由于
+<span class="math inline">\(X\)</span> 是紧的，<span
+class="math inline">\(d(Tx,x)\)</span> 必在 <span
+class="math inline">\(X\)</span> 上的某一点 <span
+class="math inline">\(\bar{x}\)</span> 取最小值，我们证明 <span
+class="math inline">\(T\bar{x}=\bar{x}\)</span>. 因为如不然 <span
+class="math inline">\(T\bar{x}\neq\bar{x}\)</span>，则由给定条件</p>
+<p><span class="math display">\[
+d(T^2\bar{x},T\bar{x})&lt;d(T\bar{x},\bar{x}),
+\]</span></p>
+<p>这与 <span class="math inline">\(d(Tx, x)\)</span> 在 <span
+class="math inline">\(\bar{x}\)</span> 点取最小值矛盾. 惟一性显然.</p>
+<h2 id="习题分析">习题分析</h2>
+<p>习题 1.16
+埋下的“回旋镖”终于在这一题转了回来。这道题要我们证明的，正是我们先前所说明的，在紧致性条件下的不动点定理，即<strong>Edelstein不动点定理</strong>。</p>
+<p>拿到这道题，很多同学的第一反应一定是：想办法把题目的“弱压缩”条件升级为Banach定理中的“强压缩”条件。顺着这个直觉，最容易想到的伪证思路就是：构造一个压缩率函数
+<span
+class="math inline">\(g(x,y)=\frac{d(Tx,Ty)}{d(x,y)}\)</span>。因为
+<span class="math inline">\(X\)</span> 是紧致空间，所以乘积空间 <span
+class="math inline">\(X\times X\)</span>
+也是紧致空间；连续函数在紧致集上必有最大值，设最大值为 <span
+class="math inline">\(\theta\)</span>。又因为已知 <span
+class="math inline">\(d(Tx,Ty) &lt; d(x,y)\)</span>，所以这个最大值
+<span class="math inline">\(\theta\)</span> 一定严格小于1。由此得出
+<span class="math inline">\(d(Tx,Ty) \le \theta
+d(x,y)\)</span>，完美化归为Banach压缩映射定理，直接秒杀。</p>
+<p>恭喜你，掉进了拓扑学中最经典的陷阱。在习题 1.16
+的【助教提点】中我们曾经剧透过度：这个比值函数 <span
+class="math inline">\(g(x,y)\)</span> 在对角线 <span
+class="math inline">\(x=y\)</span>
+处是<strong>没有定义</strong>的（分母为0）。为了让函数有定义，你必须把乘积空间挖去对角线，即考察
+<span class="math inline">\(X\times
+X\setminus\{(x,x)\}\)</span>。但一旦挖去对角线，这个<strong>剩下的空间就不再是紧致的了</strong>。连续函数在非紧空间上，根本无法保证能取到最大值。</p>
+<p>事实上，不仅证明过程是错的，在这个客观条件下，<strong>全局严格小于1的压缩率
+<span class="math inline">\(\theta\)</span>
+根本就不存在</strong>。我们可以举一个极其直观的反例：在紧致空间 <span
+class="math inline">\(X=[0,1/2]\)</span> 上，考虑映射 <span
+class="math inline">\(T(x)=x-x^2\)</span>。它完美满足本题的弱压缩条件，但当
+<span class="math inline">\(x\)</span> 和 <span
+class="math inline">\(y\)</span>
+无限趋近于0时，它的局部压缩率无限逼近于1。任何企图通过寻找全局 <span
+class="math inline">\(\theta &lt; 1\)</span>
+来生搬硬套Banach定理的尝试，注定是死路一条。</p>
+<p>既然双变量的比值函数会碰到对角线奇点，Edelstein给出了一个极其天才的破局思路：降维！他不再同时考察
+<span class="math inline">\(x\)</span> 和 <span
+class="math inline">\(y\)</span>
+两个点，而是将目光聚焦在单变量的“<strong>位移量</strong>”上。构造位移函数
+<span class="math inline">\(f(x)=d(x,Tx)\)</span>，它的定义域是整个空间
+<span
+class="math inline">\(X\)</span>，没有分母，没有奇点，不需要挖去任何东西。既然
+<span class="math inline">\(X\)</span> 是完美的紧致空间，<span
+class="math inline">\(f(x)\)</span>
+就必然能在某一点取到全局最小值。只要利用弱压缩条件证明这个最小值只能是0，不动点自然就浮出水面了。</p>
+<p>除了极值法，本题同样可以通过构造迭代序列来证明。在紧致空间中，迭代序列可能不会像Banach定理那样“全列飞速收敛”，但它一定会在某个地方“扎堆”（即存在收敛子列）。而这个扎堆的中心，必然是那个无法再被压缩的不动点。</p>
+<h2 id="标准解答">标准解答</h2>
+<h3 id="证法一极值法">证法一：极值法</h3>
+<p>此证法通过构造单变量的连续位移函数来寻找不动点. 定义实值函数 <span
+class="math inline">\(f:X\to\mathbb{R}\)</span>，令：</p>
+<p><span class="math display">\[
+f(x) = d(x, Tx)
+\]</span></p>
+<p>首先证明 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(X\)</span> 上是连续函数. 由题目已知的弱压缩条件
+<span class="math inline">\(d(Tx,Ty)&lt;d(x,y)\)</span> 易知，映射 <span
+class="math inline">\(T\)</span> 自身必定在 <span
+class="math inline">\(X\)</span> 上连续. 任取空间中两点 <span
+class="math inline">\(x,y\in X\)</span>，利用度量空间的三角不等式，考察
+<span class="math inline">\(f(x)\)</span> 与 <span
+class="math inline">\(f(y)\)</span> 的差值边界：</p>
+<p><span class="math display">\[
+f(x) = d(x, Tx) \le d(x, y) + d(y, Ty) + d(Ty, Tx)
+\]</span></p>
+<p>移项并整理，可得：</p>
+<p><span class="math display">\[
+f(x) - f(y) \le d(x, y) + d(Tx, Ty)
+\]</span></p>
+<p>由于 <span class="math inline">\(T\)</span> 满足 <span
+class="math inline">\(d(Tx, Ty) \le
+d(x,y)\)</span>，上述不等式可进一步放缩为 <span
+class="math inline">\(f(x) - f(y) \le 2d(x,y)\)</span>. 由对称性，交换
+<span class="math inline">\(x, y\)</span> 的位置同样可得 <span
+class="math inline">\(f(y) - f(x) \le 2d(x,y)\)</span>.
+综合两者即得绝对值不等式：</p>
+<p><span class="math display">\[
+|f(x) - f(y)| \le 2d(x,y)
+\]</span></p>
+<p>这严格证明了实值函数 <span class="math inline">\(f(x)\)</span> 在
+<span class="math inline">\(X\)</span> 上是（一致）连续的.</p>
+<p>接下来引入空间的紧致性. 已知 <span class="math inline">\((X,
+d)\)</span> 是紧距离空间，而 <span class="math inline">\(f(x)\)</span>
+是定义在紧致空间上的连续实值函数.
+根据极值定理（Weierstrass定理），连续函数在紧集上必然能取得全局最小值.
+即必定存在某一点 <span class="math inline">\(\bar{x}\in
+X\)</span>，使得对于任意 <span class="math inline">\(x\in
+X\)</span>，恒有 <span class="math inline">\(f(\bar{x}) \le
+f(x)\)</span>.</p>
+<p>我们采用反证法证明该最小值为0. 假设 <span
+class="math inline">\(\bar{x}\)</span> 不是不动点，即 <span
+class="math inline">\(T\bar{x} \neq \bar{x}\)</span>.
+根据题设中严格的弱压缩条件，将 <span
+class="math inline">\(\bar{x}\)</span> 与 <span
+class="math inline">\(T\bar{x}\)</span>
+作为两个不同的点代入，必定满足：</p>
+<p><span class="math display">\[
+d(T(T\bar{x}), T\bar{x}) &lt; d(T\bar{x}, \bar{x})
+\]</span></p>
+<p>回顾位移函数 <span class="math inline">\(f\)</span>
+的定义，上式左端恰为 <span
+class="math inline">\(f(T\bar{x})\)</span>，右端恰为 <span
+class="math inline">\(f(\bar{x})\)</span>，即：</p>
+<p><span class="math display">\[
+f(T\bar{x}) &lt; f(\bar{x})
+\]</span></p>
+<p>这说明在点 <span class="math inline">\(T\bar{x}\)</span> 处，函数
+<span class="math inline">\(f\)</span> 的位移量比在 <span
+class="math inline">\(\bar{x}\)</span>
+处的位移量还要严格更小！这与“<span
+class="math inline">\(\bar{x}\)</span> 是 <span
+class="math inline">\(f(x)\)</span> 的全局最小值点”构成了直接的逻辑矛盾.
+因此假设不成立，必定有 <span class="math inline">\(T\bar{x} =
+\bar{x}\)</span>，即 <span class="math inline">\(\bar{x}\)</span> 是
+<span class="math inline">\(T\)</span> 在 <span
+class="math inline">\(X\)</span> 中的不动点.</p>
+<p>最后验证不动点的唯一性. 假设存在两个不同的不动点 <span
+class="math inline">\(x,y\in X\)</span>，即 <span
+class="math inline">\(Tx=x, Ty=y\)</span> 且 <span
+class="math inline">\(x\neq y\)</span>. 将其代入题设的弱压缩条件中：</p>
+<p><span class="math display">\[
+d(x, y) = d(Tx, Ty) &lt; d(x, y)
+\]</span></p>
+<p>得出 <span class="math inline">\(d(x,y) &lt; d(x,y)\)</span>
+的荒谬结论. 故矛盾，不动点唯一.</p>
+<h3 id="证法二序列法">证法二：序列法</h3>
+<p>任取初始点 <span class="math inline">\(x_0 \in
+X\)</span>，构造标准的Picard迭代序列 <span class="math inline">\(x_{n+1}
+= Tx_n\)</span>.</p>
+<p>考察相邻两项的距离序列 <span class="math inline">\(c_n = d(x_n,
+x_{n+1})\)</span>. 若在某一步 <span class="math inline">\(c_n =
+0\)</span>，则 <span class="math inline">\(x_n\)</span>
+即为不动点，证明结束；若对于所有 <span class="math inline">\(n\)</span>
+都有 <span class="math inline">\(c_n &gt;
+0\)</span>，则根据弱压缩条件：</p>
+<p><span class="math display">\[
+c_{n+1} = d(Tx_n, Tx_{n+1}) &lt; d(x_n, x_{n+1}) = c_n
+\]</span></p>
+<p>这说明实数列 <span class="math inline">\(\{c_n\}\)</span>
+严格单调递减且有下界0. 由单调有界定理，该距离序列必定存在极限，设 <span
+class="math inline">\(\lim_{n \to \infty} c_n = c \ge 0\)</span>.</p>
+<p>此时利用空间的紧致性：因为 <span class="math inline">\(X\)</span>
+是紧距离空间，序列 <span class="math inline">\(\{x_n\}\)</span>
+必定存在一个收敛的子列 <span
+class="math inline">\(\{x_{n_k}\}\)</span>，设其收敛于极限点 <span
+class="math inline">\(\bar{x} \in X\)</span>. 又因映射 <span
+class="math inline">\(T\)</span>
+满足距离收缩从而必定连续，极限运算与映射可以交换顺序.
+因此对该子列施加映射，其像列亦收敛：</p>
+<p><span class="math display">\[
+\begin{aligned}
+x_{n_k+1} &amp;= Tx_{n_k} \to T\bar{x} \\
+x_{n_k+2} &amp;= T(x_{n_k+1}) \to T^2\bar{x}
+\end{aligned}
+\]</span></p>
+<p>现在，我们将距离函数的连续性应用于这些收敛子列. 考察子列 <span
+class="math inline">\(x_{n_k}\)</span> 与其后继项的距离：</p>
+<p><span class="math display">\[
+d(x_{n_k}, x_{n_k+1}) \to d(\bar{x}, T\bar{x})
+\]</span></p>
+<p>由于原数列 <span class="math inline">\(\{c_n\}\)</span> 的全局极限为
+<span class="math inline">\(c\)</span>，其任意子列的极限也必然是 <span
+class="math inline">\(c\)</span>. 故 <span
+class="math inline">\(d(\bar{x}, T\bar{x}) = c\)</span>.
+同理，再往后推一步考察距离子列：</p>
+<p><span class="math display">\[
+d(x_{n_k+1}, x_{n_k+2}) \to d(T\bar{x}, T^2\bar{x})
+\]</span></p>
+<p>其极限同样必须是 <span class="math inline">\(c\)</span>.
+由此我们得出了一个惊人的等式：</p>
+<p><span class="math display">\[
+d(\bar{x}, T\bar{x}) = d(T\bar{x}, T^2\bar{x}) = c
+\]</span></p>
+<p>若 <span class="math inline">\(\bar{x}\)</span> 不是不动点（即 <span
+class="math inline">\(\bar{x} \neq
+T\bar{x}\)</span>），根据题设的弱压缩条件，必须严格满足 <span
+class="math inline">\(d(T\bar{x}, T^2\bar{x}) &lt; d(\bar{x},
+T\bar{x})\)</span>，即要求 <span class="math inline">\(c &lt;
+c\)</span>，这显然矛盾. 故必定有 <span class="math inline">\(\bar{x} =
+T\bar{x}\)</span>，不动点存在且唯一性证明同证法一.</p>
+<h2 id="助教提点">助教提点</h2>
+<p>这道Edelstein不动点定理的证明非常巧妙，它向我们展示了当Banach压缩映射定理失效时，如何利用拓扑学中极为强大的“紧致性”来拯救不动点的存在性。如果你仔细品味会发现，它的两种证法本质上都在做一件事：用连续函数逼近极限，然后利用紧致性确保这个极限真真实实地落在空间内部，最后通过弱压缩条件引爆矛盾。</p>
+<p>至此，本教材关于压缩映射定理及其变体的全部课后习题已讲解完毕。压缩映射原理不仅是完备度量空间最璀璨的应用之一，更是我们后续在常微分方程证明解的存在唯一性、以及数值分析中证明迭代算法收敛性的核心基石。希望大家通过这几道习题的洗礼，不仅记住了定理的结论，更洞悉了完备性、连续性、紧致性与偏序结构在泛函分析中的绝妙配合。</p>
+<p>关于本题的期末考试评分规则，阅卷的核心在于排查大家是否陷入了“伪证”的陷阱（一旦企图用比值求
+<span
+class="math inline">\(\theta&lt;1\)</span>，直接0分处理）。若本题总分为5分，按正确思路给分如下：</p>
+<ol type="1">
+<li><strong>构造良定义对象</strong>（1分）：能够正确定义出无奇点的位移函数
+<span
+class="math inline">\(f(x)=d(x,Tx)\)</span>，或者正确写出迭代序列及其单调距离数列
+<span class="math inline">\(c_n\)</span>。</li>
+<li><strong>运用紧致性</strong>（1分）：明确利用紧致性定理，指出连续函数能取到全局最小值，或者序列必然存在收敛子列。</li>
+<li><strong>引出矛盾点</strong>（2分）：利用弱压缩条件，得出 <span
+class="math inline">\(f(T\bar{x})&lt;f(\bar{x})\)</span>
+与最小值矛盾；或在子列中得出 <span class="math inline">\(c&lt;c\)</span>
+的极限矛盾。</li>
+<li><strong>证明唯一性</strong>（1分）：用反证法简洁明了地说明唯一性，完成闭环。</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Billyfu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://billyfu.top/2026/08/20/functional/functional_exercises1-20/" title="泛函分析习题讲解 习题1.20">https://billyfu.top/2026/08/20/functional/functional_exercises1-20/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/08/20/functional/functional_exercises1-19/" rel="prev" title="泛函分析习题讲解 习题1.19">
+                  <i class="fa fa-angle-left"></i> 泛函分析习题讲解 习题1.19
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2026/08/21/functional/functional_exercises1-21/" rel="next" title="泛函分析习题讲解 习题1.21">
+                  泛函分析习题讲解 习题1.21 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2025-06 – 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">傅祉珏 (FU TszKok) <br> 博客代码开源遵循 AGPL-3.0 协议 | 所有博文遵循 CC BY-NC-ND 4.0 协议，未经明确书面授权，严禁任何形式的商业转载、洗稿或用于牟利。</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

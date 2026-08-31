@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"billyfu.top","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="习题题面 设 \(X\) 是距离空间，证明：如果在 \(X\) 中，任一半径趋于零的闭球套具有非空交，则空间 \(X\) 是完备的.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="泛函分析习题讲解 习题1.14">
+<meta property="og:url" content="https://billyfu.top/2026/08/03/functional/functional_exercises1-14/index.html">
+<meta property="og:site_name" content="BillyBlog">
+<meta property="og:description" content="习题题面 设 \(X\) 是距离空间，证明：如果在 \(X\) 中，任一半径趋于零的闭球套具有非空交，则空间 \(X\) 是完备的.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-08-02T18:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-31T16:03:04.712Z">
+<meta property="article:author" content="Billyfu">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://billyfu.top/2026/08/03/functional/functional_exercises1-14/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://billyfu.top/2026/08/03/functional/functional_exercises1-14/","path":"2026/08/03/functional/functional_exercises1-14/","title":"泛函分析习题讲解 习题1.14"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>泛函分析习题讲解 习题1.14 | BillyBlog</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">BillyBlog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-版权"><a href="/copyright/" rel="section"><i class="fa fa-copyright fa-fw"></i>版权</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%A0%E9%A2%98%E9%A2%98%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">习题题面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%99%E6%9D%90%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text">教材参考答案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%A0%E9%A2%98%E5%88%86%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">习题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E8%A7%A3%E7%AD%94"><span class="nav-number">4.</span> <span class="nav-text">标准解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%81%E6%B3%95%E4%B8%80%E5%8F%8D%E8%AF%81%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">证法一：反证法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%81%E6%B3%95%E4%BA%8C%E7%9B%B4%E6%8E%A5%E8%AF%81%E6%98%8E%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text">证法二：直接证明法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A9%E6%95%99%E6%8F%90%E7%82%B9"><span class="nav-number">5.</span> <span class="nav-text">助教提点</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Billyfu"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Billyfu</p>
+  <div class="site-description" itemprop="description">原来还会有人看这里的吗？</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Billiefu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Billiefu" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/2011537659?spm_id_from=333.1007.0.0" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;2011537659?spm_id_from&#x3D;333.1007.0.0" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:futszkok@gmail.com" title="邮箱 → mailto:futszkok@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>邮箱</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:futk@mail2.sysu.edu.cn" title="工作邮箱 → mailto:futk@mail2.sysu.edu.cn" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>工作邮箱</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://github.com/" title="https:&#x2F;&#x2F;github.com" rel="noopener" target="_blank">GitHub</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://www.sysu.edu.cn/" title="https:&#x2F;&#x2F;www.sysu.edu.cn" rel="noopener" target="_blank">中山大学</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://cse.sysu.edu.cn/" title="https:&#x2F;&#x2F;cse.sysu.edu.cn" rel="noopener" target="_blank">中山大学计算机学院</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/08/03/functional/functional_exercises1-14/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Billyfu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BillyBlog">
+      <meta itemprop="description" content="原来还会有人看这里的吗？">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="泛函分析习题讲解 习题1.14 | BillyBlog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          泛函分析习题讲解 习题1.14
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2026-08-03 02:00:00" itemprop="dateCreated datePublished" datetime="2026-08-03T02:00:00+08:00">2026-08-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-09-01 00:03:04" itemprop="dateModified" datetime="2026-09-01T00:03:04+08:00">2026-09-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A7%91%E6%99%AE%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">科普博客</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A7%91%E6%99%AE%E5%8D%9A%E5%AE%A2/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">泛函分析</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="习题题面">习题题面</h2>
+<p>设 <span class="math inline">\(X\)</span> 是距离空间，证明：如果在
+<span class="math inline">\(X\)</span>
+中，任一半径趋于零的闭球套具有非空交，则空间 <span
+class="math inline">\(X\)</span> 是完备的.</p>
+<span id="more"></span>
+<h2 id="教材参考答案">教材参考答案</h2>
+<p>设 <span class="math inline">\(\{ x_n \}\)</span> 是距离空间 <span
+class="math inline">\(X\)</span> 中的任一 Cauchy 列,取 <span
+class="math inline">\(n_k\)</span> ,使</p>
+<p><span class="math display">\[
+d( x_{n_k + p}, x_{n_k} )  &lt; \frac{1}{2^k},
+\]</span></p>
+<p>对任意 <span class="math inline">\(p &gt; 0\)</span> . 设 <span
+class="math inline">\(\bar{S}_k\)</span> 是以 <span
+class="math inline">\(x_{n_k}\)</span> 为中心 <span
+class="math inline">\(\frac{1}{2^{k - 1}}\)</span> 为半径的闭球. 则有
+<span class="math inline">\(\bar{S}_{k + 1} \subset  S_k\)</span>
+,实际上,如果 <span class="math inline">\(x \in  \bar{S}_{k + 1}\)</span>
+,则</p>
+<p><span class="math display">\[
+\begin{aligned}
+d( x, x_{n_k} )  &amp;\leq  d( x, x_{n_{k + 1}} )  + d( x_{n_{k + 1}},
+x_{n_k} ) \\
+&amp;\leq  \frac{1}{2^k} + \frac{1}{2^k} = \frac{1}{2^{k - 1}},
+\end{aligned}
+\]</span></p>
+<p>即 <span class="math inline">\(x \in  \bar{S}_k\)</span> .</p>
+<p>球 <span class="math inline">\(\bar{S}_k\)</span>
+的半径趋于零,所以依假设存在一点 <span class="math inline">\(x_0
+\in  \bar{S}_k ( k = 1,2,\cdots )\)</span> . 由于 <span
+class="math inline">\(x_{n_k}, x_0 \in  \bar{S}_k\)</span> ,因此,</p>
+<p><span class="math display">\[
+d( x_{n_k}, x_0 )  \leq  \frac{1}{2^{k - 1}} \rightarrow  0\; ( k
+\rightarrow  \infty ) ,
+\]</span></p>
+<p>即 <span class="math inline">\(\{ x_n \}\)</span> 有子列 <span
+class="math inline">\(\{ x_{n_k} \}\)</span> 收敛于 <span
+class="math inline">\(x_0\)</span> ，但 <span class="math inline">\(\{
+x_n \}\)</span> 是 Cauchy 列，必有 <span class="math inline">\(x_n
+\rightarrow  x_0 ( n \rightarrow  \infty )\)</span> .</p>
+<h2 id="习题分析">习题分析</h2>
+<p>如果各位同学们有学过《数学分析》，可以发现这一道题目我们似乎在分析课当中做过类似的事情。在邓东皋老师的《数学分析简明教程》的再论实数系当中，我们曾经做过这样一件事：将闭区间套定理（闭球套定理在实数域上的表示）、戴德金连续性准则（实数基本定理）以及确界定理相互来回证明，证实了这三个定理的等价性。但是实数连续性到实数的完备，这中间还是需要我们去说明的，如何证明这两者的等价性正是我们这题需要做的事情。</p>
+<p>回顾课本当中，我们用了柯西收敛准则证明了完备能够推出闭球套定理，而现在我们需要用闭球套定理去推出完备。实际上最显然的方法就是反证法，假设空间不是完备的，即这个空间当中有很多的“空洞”。那既然如此，这个闭球套的交就很可能会刚好圈住这个空洞，而不是非空，从而证明出矛盾。这个思路非常显然，这也是我们由完备性证明出闭球套的一个顺理成章的切入点。但是很可惜，课本似乎不喜欢选用这种绕圈子的方法，反而比较喜欢看看能不能用更加Elegant的方法直接证明出来。那我们就可以分析一下如何用直接法来证明出这道题。</p>
+<p>如果用正常的方法来做，那我们要证明的思路就变成：我们要随便拿一个Cauchy列出来，想办法把它变成闭球套，最后证明
+<span class="math inline">\(\{x_n\}\)</span>
+的极限就是这个闭球套的非空交。但我们一定不可以直接以每个 <span
+class="math inline">\(x_n\)</span>
+点做球心画交，尽管这个思路是最直观的。这是因为我们不能保证每个球之间一定是有交集，或者是保证这每个球是严格包含的关系（例如遇到震荡收敛数列时球会左右横跳）。所以如果我们要强行制造交集的话，既然我们取不到全列，那我们取一个“快速收敛的子列”总行了吧。我们通过这个快速收敛的子列，来用闭球套定理证明这个子列的极限点，最后再通过Cauchy列的性质来从子列收敛推回到全列收敛就行了。</p>
+<h2 id="标准解答">标准解答</h2>
+<h3 id="证法一反证法">证法一：反证法</h3>
+<p>假设已知条件成立，即在距离空间 <span
+class="math inline">\((X,d)\)</span>
+中，任一半径趋于0的闭球套均具有非空交集. 我们假设结论不成立，即假设空间
+<span class="math inline">\((X,d)\)</span> 不是完备的.
+根据不完备的定义，在 <span class="math inline">\(X\)</span>
+中必然存在一个Cauchy列 <span
+class="math inline">\(\{x_n\}\)</span>，使得该序列不收敛于 <span
+class="math inline">\(X\)</span> 中的任何一点.</p>
+<p>因为 <span class="math inline">\(\{x_n\}\)</span>
+是Cauchy列，对于任意的 <span
+class="math inline">\(\varepsilon_k=\frac{1}{2^k}\)</span>，必定存在正整数
+<span class="math inline">\(N_k\)</span> ，使得当 <span
+class="math inline">\(m,n\ge N_k\)</span>时，有：</p>
+<p><span class="math display">\[
+d(x_m, x_n) &lt; \frac{1}{2^k}
+\]</span></p>
+<p>我们递归地抽取一个快速收缩的子列：首先取 <span
+class="math inline">\(n_1\ge N_1\)</span>；接着取 <span
+class="math inline">\(n_2&gt;\max(n_1,N_2)\)</span>；以此类推，取 <span
+class="math inline">\(n_k&gt;\max(n_{k-1},N_k)\)</span>. 由此得到的子列
+<span class="math inline">\(\{x_{n_k}\}\)</span> 满足：对于任意整数
+<span class="math inline">\(p&gt;0\)</span> 恒有 <span
+class="math inline">\(d(x_{n_{k+p}},x_{n_k})&lt;\frac{1}{2^k}\)</span>.
+现在，我们构造一列以子列各项为中心的闭球：</p>
+<p><span class="math display">\[
+\bar{S}_k = \bar{B}\left(x_{n_k}, \frac{1}{2^{k-1}}\right) = \left\{x
+\in X \mid d(x, x_{n_k}) \le \frac{1}{2^{k-1}}\right\}
+\]</span></p>
+<p>任取 <span class="math inline">\(x\in\bar{S}_{k+1}\)</span>，有 <span
+class="math inline">\(d(x,x_{n_{k+1}})\le\frac{1}{2^k}\)</span>.
+由三角不等式可得出：</p>
+<p><span class="math display">\[
+d(x, x_{n_k}) \le d(x, x_{n_{k+1}}) + d(x_{n_{k+1}}, x_{n_k}) &lt;
+\frac{1}{2^k} + \frac{1}{2^k} = \frac{1}{2^{k-1}}
+\]</span></p>
+<p>故 <span class="math inline">\(x\in\bar{S}_k\)</span>，即严格证明了
+<span class="math inline">\(\bar{S}_{k+1}\subset\bar{S}_k\)</span>. 因此
+<span class="math inline">\(\{\bar{S}_k\}\)</span>
+是一个闭球套，且其半径在 <span class="math inline">\(k\to\infty\)</span>
+时趋于0.</p>
+<p>根据题目已知的假设条件，上述闭球套必定具有非空交集. 设 <span
+class="math inline">\(x_0\in\bigcap_{k=1}^\infty\bar{S}_k\)</span>. 因为
+<span class="math inline">\(x_0\in\bar{S}_k\)</span>，所以必然有：</p>
+<p><span class="math display">\[
+d(x_0, x_{n_k}) \le \frac{1}{2^{k-1}}
+\]</span></p>
+<p>令 <span class="math inline">\(k\to\infty\)</span>，右端趋于0，因此
+<span class="math inline">\(\lim_{k\to\infty}d(x_0,x_{n_k})=0\)</span>.
+这意味着子列 <span class="math inline">\(\{x_{n_k}\}\)</span> 收敛于
+<span class="math inline">\(X\)</span> 中的点 <span
+class="math inline">\(x_0\)</span>.
+又根据度量空间的基本性质：如果一个Cauchy列拥有一个收敛的子列，那么该Cauchy列自身也必定收敛于同一个极限.
+因此整个Cauchy列 <span class="math inline">\(\{x_n\}\)</span>
+必然收敛于点 <span class="math inline">\(x_0\in X\)</span>.</p>
+<p>但这与我们最初“<span class="math inline">\(\{x_n\}\)</span>
+是一个不收敛的Cauchy列”的矛盾假设构成了直接冲突. 即空间 <span
+class="math inline">\(X\)</span> 必定是完备的.</p>
+<h3 id="证法二直接证明法">证法二：直接证明法</h3>
+<p>要证距离空间 <span class="math inline">\((X,d)\)</span>
+完备，即需证明 <span class="math inline">\(X\)</span>
+中的任意Cauchy列都收敛. 设 <span class="math inline">\(\{x_n\}\)</span>
+是 <span class="math inline">\(X\)</span> 中的任意一个Cauchy列.
+对于任意给定的 <span class="math inline">\(\varepsilon_k=\frac{1}{2^k}\
+(k=1,2,\dots)\)</span>，必定存在正整数 <span
+class="math inline">\(N_k\)</span>，使得当 <span
+class="math inline">\(m,n\ge N_k\)</span> 时，<span
+class="math inline">\(d(x_m,x_n)&lt;\frac{1}{2^k}\)</span>.</p>
+<p>为了保证抽取的是严格递增的子列，我们依次选取下标：取 <span
+class="math inline">\(n_1\ge N_1\)</span>；取 <span
+class="math inline">\(n_2&gt;\max(n_1,N_2)\)</span>；一直到取 <span
+class="math inline">\(n_k&gt;\max(n_{k-1},N_k)\)</span>. 由此得到的子列
+<span class="math inline">\(\{x_{n_k}\}\)</span>，对于任意 <span
+class="math inline">\(p&gt;0\)</span>，由于 <span
+class="math inline">\(n_{k+p}&gt;n_k\ge N_k\)</span>，一定满足：</p>
+<p><span class="math display">\[
+d(x_{n_{k+p}}, x_{n_k}) &lt; \frac{1}{2^k}
+\]</span></p>
+<p>接下来以子列的点为中心构造一系列闭球：</p>
+<p><span class="math display">\[
+\bar{S}_k = \bar{B}\left(x_{n_k}, \frac{1}{2^{k-1}}\right) = \left\{x
+\in X \mid d(x, x_{n_k}) \le \frac{1}{2^{k-1}}\right\}
+\]</span></p>
+<p>我们来验证这是一列嵌套的闭球套：任取 <span
+class="math inline">\(x\in\bar{S}_{k+1}\)</span>，这意味着 <span
+class="math inline">\(d(x,x_{n_{k+1}})\le\frac{1}{2^k}\)</span>.
+利用三角不等式，并结合前文推导的子列条件，我们考察 <span
+class="math inline">\(x\)</span> 到大球中心 <span
+class="math inline">\(x_{n_k}\)</span> 的距离：</p>
+<p><span class="math display">\[
+d(x, x_{n_k}) \le d(x, x_{n_{k+1}}) + d(x_{n_{k+1}}, x_{n_k}) &lt;
+\frac{1}{2^k} + \frac{1}{2^k} = \frac{1}{2^{k-1}}
+\]</span></p>
+<p>这说明 <span class="math inline">\(x\in\bar{S}_k\)</span>，从而证明了
+<span class="math inline">\(\bar{S}_{k+1}\subset\bar{S}_k\)</span>.</p>
+<p>我们构造出的闭球套 <span
+class="math inline">\(\bar{S}_1\supset\bar{S}_2\supset\bar{S}_3\dots\)</span>，其半径
+<span class="math inline">\(r_k=\frac{1}{2^{k-1}}\)</span> 显然在 <span
+class="math inline">\(k\to\infty\)</span> 时趋于0.
+根据题目已知条件，这种闭球套必然存在非空交集，因此存在唯一的一点 <span
+class="math inline">\(x_0\in\bigcap_{k=1}^\infty\bar{S}_k\)</span>. 因为
+<span class="math inline">\(x_0\)</span> 属于所有的闭球 <span
+class="math inline">\(\bar{S}_k\)</span>，同时球心 <span
+class="math inline">\(x_{n_k}\)</span> 显然也在自己的闭球 <span
+class="math inline">\(\bar{S}_k\)</span>
+中，所以它们之间的距离一定不会超过闭球的半径，即：</p>
+<p><span class="math display">\[
+d(x_{n_k}, x_0) \le \frac{1}{2^{k-1}}
+\]</span></p>
+<p>令 <span class="math inline">\(k\to\infty\)</span>，右边趋于0，所以
+<span class="math inline">\(\lim_{k\to\infty}d(x_{n_k},x_0)=0\)</span>.
+这就证明了Cauchy列 <span class="math inline">\(\{x_n\}\)</span>
+存在一个收敛到 <span class="math inline">\(x_0\)</span> 的子列 <span
+class="math inline">\(\{x_{n_k}\}\)</span>. 既然Cauchy列有一个子列收敛于
+<span
+class="math inline">\(x_0\)</span>，那么根据Cauchy序列的性质，整个序列必定收敛于
+<span class="math inline">\(x_0\)</span>. 这证明了 <span
+class="math inline">\(X\)</span> 中任意Cauchy序列均收敛，故空间完备.</p>
+<h2 id="助教提点">助教提点</h2>
+<p>这一道题是一道分析味很重，但思路很粗暴的题目。这道题实际上要想出来不难，但这道题更重要的并不是想出如何解决，而是明晰了“闭球套定理”和“完备性”之间的等价关系。在数学的学习上，实际上我们很容易产生一种“知识迁移”的冲动，有时候我们会喜欢把实数系学过的定理迁移过来看看这里是不是也是成立的。为了让大家深刻体会更高维度的度量空间究竟有什么性质和实数系是一样的，又有哪些是不一样的，我们不妨把实数系和度量空间的完备性等价条件做一个直观的对比，像高等代数列举可逆矩阵的等价条件一样，看看实数系和一般度量空间都有什么与完备性等价的命题：</p>
+<blockquote>
+<p><strong>实数系 <span class="math inline">\(\mathbb{R}\)</span>
+完备性的等价命题：</strong></p>
+<ol type="1">
+<li>柯西收敛准则（Cauchy列必收敛）</li>
+<li>闭区间套定理（任一区间长度趋于零的闭区间套具有非空交）</li>
+<li>确界定理（非空有上界集必有上确界）</li>
+<li>单调有界定理</li>
+<li>聚点定理（前提：<strong>有界无穷集</strong>必有聚点）</li>
+<li>有限覆盖定理（前提：<strong>有界闭区间</strong>必有有限子覆盖）</li>
+</ol>
+</blockquote>
+<blockquote>
+<p><strong>一般度量空间 <span class="math inline">\((X, d)\)</span>
+完备性的等价命题：</strong></p>
+<ol type="1">
+<li>柯西收敛准则（Cauchy列必收敛）</li>
+<li>闭球套定理（任一半径趋于零的闭球套具有非空交）</li>
+<li>绝对闭性（等距嵌入到另一个度量空间中，必然是其闭子集）</li>
+</ol>
+</blockquote>
+<p>对比这两个清单，我们实际上会惊奇地发现，<strong>实数系里极其好用的很多等价定理，在一般的抽象度量空间中统统失效了</strong>！</p>
+<p>首先，诸如“确界定理”和“单调有界定理”，它们严重依赖实数可以“比大小”的<strong>偏序属性</strong>。但在抽象的度量空间（比如复平面或函数空间）里，点与点之间根本不存在自然的全局大小关系，自然也就无从谈起确界或单调性。如果我们非要利用偏序关系去做比较，就需要把空间中的点通过某个实值映射（泛函）投射回实数系上，然后再结合空间的“距离”去人为构造出一种偏序关系，从而利用类似确界定理的理论去说明原空间是完备的。这正是著名的<strong>埃克兰变分原理</strong>的底层逻辑。本书并不会展开讲这个原理，但关于“偏序关系”的应用，我们会在第三章学习Hahn-Banach定理及Zorn引理时再做重点提及。</p>
+<p>其次，很多同学会把“聚点定理”和“有限覆盖定理”直接当成完备性去用。这里需要注意的是，在一般的度量空间中，这两个定理刻画的是比完备性要求苛刻得多的<strong>紧致性</strong>。数学分析里之所以能用这两个定理来等价完备性，是因为课本给它们强加了“有界闭区间”或“有界无穷集”这个大前提。因为在实数域中，有界闭集本身就是紧致的！</p>
+<p>回到这道题本身，这一道题无论是使用直接证明还是反证法，都一定需要从Cauchy列中构造出闭球套，因此这道题的评分实际上无论使用什么办法，都有一个很完整的评分逻辑链。如果这是一道5分的题目，那么依照Cauchy列准确构造出闭球套得2分；根据已知事实求得闭球套非空交的极限点得2分；最后得出结论或者将子列收敛拓展回全列收敛得1分。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Billyfu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://billyfu.top/2026/08/03/functional/functional_exercises1-14/" title="泛函分析习题讲解 习题1.14">https://billyfu.top/2026/08/03/functional/functional_exercises1-14/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/08/02/functional/functional_exercises1-13/" rel="prev" title="泛函分析习题讲解 习题1.13">
+                  <i class="fa fa-angle-left"></i> 泛函分析习题讲解 习题1.13
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2026/08/06/functional/functional_exercises1-15/" rel="next" title="泛函分析习题讲解 习题1.15">
+                  泛函分析习题讲解 习题1.15 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2025-06 – 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">傅祉珏 (FU TszKok) <br> 博客代码开源遵循 AGPL-3.0 协议 | 所有博文遵循 CC BY-NC-ND 4.0 协议，未经明确书面授权，严禁任何形式的商业转载、洗稿或用于牟利。</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

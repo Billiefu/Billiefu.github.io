@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"billyfu.top","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="习题题面 设拓扑空间 \((X,\tau)\) 满足第二可数公理，证明从 \(X\) 的任意开覆盖中可选出由最多可数个集构成的子覆盖.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="泛函分析习题讲解 习题1.25">
+<meta property="og:url" content="https://billyfu.top/2026/08/31/functional/functional_exercises1-25/index.html">
+<meta property="og:site_name" content="BillyBlog">
+<meta property="og:description" content="习题题面 设拓扑空间 \((X,\tau)\) 满足第二可数公理，证明从 \(X\) 的任意开覆盖中可选出由最多可数个集构成的子覆盖.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-08-31T15:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-31T16:08:36.257Z">
+<meta property="article:author" content="Billyfu">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://billyfu.top/2026/08/31/functional/functional_exercises1-25/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://billyfu.top/2026/08/31/functional/functional_exercises1-25/","path":"2026/08/31/functional/functional_exercises1-25/","title":"泛函分析习题讲解 习题1.25"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>泛函分析习题讲解 习题1.25 | BillyBlog</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">BillyBlog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-版权"><a href="/copyright/" rel="section"><i class="fa fa-copyright fa-fw"></i>版权</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%A0%E9%A2%98%E9%A2%98%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">习题题面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%99%E6%9D%90%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text">教材参考答案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%A0%E9%A2%98%E5%88%86%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">习题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E8%A7%A3%E7%AD%94"><span class="nav-number">4.</span> <span class="nav-text">标准解答</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A9%E6%95%99%E6%8F%90%E7%82%B9"><span class="nav-number">5.</span> <span class="nav-text">助教提点</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Billyfu"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Billyfu</p>
+  <div class="site-description" itemprop="description">原来还会有人看这里的吗？</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Billiefu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Billiefu" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/2011537659?spm_id_from=333.1007.0.0" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;2011537659?spm_id_from&#x3D;333.1007.0.0" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:futszkok@gmail.com" title="邮箱 → mailto:futszkok@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>邮箱</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:futk@mail2.sysu.edu.cn" title="工作邮箱 → mailto:futk@mail2.sysu.edu.cn" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>工作邮箱</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://github.com/" title="https:&#x2F;&#x2F;github.com" rel="noopener" target="_blank">GitHub</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://www.sysu.edu.cn/" title="https:&#x2F;&#x2F;www.sysu.edu.cn" rel="noopener" target="_blank">中山大学</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://cse.sysu.edu.cn/" title="https:&#x2F;&#x2F;cse.sysu.edu.cn" rel="noopener" target="_blank">中山大学计算机学院</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://billyfu.top/2026/08/31/functional/functional_exercises1-25/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Billyfu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BillyBlog">
+      <meta itemprop="description" content="原来还会有人看这里的吗？">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="泛函分析习题讲解 习题1.25 | BillyBlog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          泛函分析习题讲解 习题1.25
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2026-08-31 23:00:00" itemprop="dateCreated datePublished" datetime="2026-08-31T23:00:00+08:00">2026-08-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-09-01 00:08:36" itemprop="dateModified" datetime="2026-09-01T00:08:36+08:00">2026-09-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A7%91%E6%99%AE%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">科普博客</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A7%91%E6%99%AE%E5%8D%9A%E5%AE%A2/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">泛函分析</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="习题题面">习题题面</h2>
+<p>设拓扑空间 <span class="math inline">\((X,\tau)\)</span>
+满足第二可数公理，证明从 <span class="math inline">\(X\)</span>
+的任意开覆盖中可选出由最多可数个集构成的子覆盖.</p>
+<span id="more"></span>
+<h2 id="教材参考答案">教材参考答案</h2>
+<p>设 <span class="math inline">\(X\)</span> 具有可数基，<span
+class="math inline">\(\left\{G_a\right\}\)</span> 是 <span
+class="math inline">\(X\)</span> 的任一开覆盖，<span
+class="math inline">\(\left\{F_n\right\}\)</span> 是 <span
+class="math inline">\(X\)</span> 的可数基，对于任一点 <span
+class="math inline">\(x\in X\)</span>，存在可数基中的元 <span
+class="math inline">\(F_n(x)\)</span>，使得 <span
+class="math inline">\(x\in F_n(x)\subset G_n\)</span>，这样选取的集
+<span class="math inline">\(G_n(x)\)</span> 的全体最多为可数的，<span
+class="math inline">\(X\)</span> 的覆盖. 对于每一个 <span
+class="math inline">\(G_n(x)\)</span>，选取包含它的集 <span
+class="math inline">\(G_a\)</span>
+中的一个，这样我们就得到一个最多为可数个集构成的子覆盖.</p>
+<h2 id="习题分析">习题分析</h2>
+<p>在教材当中，关于第二可数公理的定义实际上只是短短的一句话。为了让大家能够在推演前重新建立起直觉，让我们先回归书本，重温一下这条极其核心的定理：</p>
+<blockquote>
+<p><strong>第二可数公理</strong></p>
+<p>如果拓扑空间中存在一个由最多可数个集构成的拓扑基，称这个空间具有可数基，或满足第二可数公理。</p>
+</blockquote>
+<p>短短一句话究竟说明了什么？它实际上想表达的意思是，空间里的任何一个极其复杂的开集，都能够用这个可数基里的“基础拼图”无缝拼接而成。这一概念可以极为自然地类比为线性代数中的“基底”：只要确定了空间里的可数基，空间中的任何一个开集（犹如向量）都可以由这组基底生成。回到本题所描绘的场景，当前我们面临着一堆开集
+<span class="math inline">\(\{G_\alpha\}_{\alpha\in
+I}\)</span>，它们并起来足以覆盖整个空间 <span
+class="math inline">\(X\)</span>。尽管这里的指标集 <span
+class="math inline">\(I\)</span>
+可能是不可数无穷大的，但我们的核心任务，就是在这个满足第二可数公理的空间里，从这片不可数的“开集汪洋”中精准地挑出至多可数个子开集，且它们依然能够严丝合缝地盖住
+<span class="math inline">\(X\)</span>。</p>
+<p>明确了题目的宏观目标后，具体的执行逻辑便水到渠成了。若要在不可数个开集
+<span class="math inline">\(\{G_\alpha\}\)</span>
+中直接进行盲目挑选，无异于大海捞针。然而，第二可数公理赋予了我们破局的利器——我们可以将可数基
+<span class="math inline">\(\mathscr{B}\)</span>
+作为“中介”去进行降维筛选。具体而言，空间中可能存在不可数个点 <span
+class="math inline">\(x\)</span>，覆盖它们的 <span
+class="math inline">\(G_\alpha\)</span> 也有不可数个，但能够用于“夹在”点
+<span class="math inline">\(x\)</span> 与开集 <span
+class="math inline">\(G_\alpha\)</span> 之间的基元素 <span
+class="math inline">\(B_k\)</span>，总共却只有可数个。因此，我们只需考察空间中的每一个点，并将那些成功塞进某个
+<span class="math inline">\(G_\alpha\)</span>
+内部的基元素统统收集起来。这个被激活的基元素集合必然是至多可数的，并且它们依然覆盖了所有的点。最后，顺藤摸瓜，对于每一个被选中的基元素
+<span
+class="math inline">\(B_k\)</span>，我们随便找一个最初包住它的“原主”
+<span
+class="math inline">\(G_\alpha\)</span>。这种由“可数基”向“原覆盖”的逆向映射，使得挑出来的
+<span class="math inline">\(G_\alpha\)</span>
+最多也只有可数个。这便是仅限于第二可数公理才能施展的数学魔法。</p>
+<h2 id="标准解答">标准解答</h2>
+<p>设 <span class="math inline">\((X,\tau)\)</span>
+为满足第二可数公理的拓扑空间，且 <span
+class="math inline">\(\mathscr{B}=\{B_1,B_2,\dots,B_n,\dots\}\)</span>
+为其可数拓扑基. 任取 <span class="math inline">\(X\)</span> 的一个开覆盖
+<span class="math inline">\(\mathscr{G}=\{G_\alpha\}_{\alpha \in
+I}\)</span>. 现证必然存在 <span
+class="math inline">\(\mathscr{G}\)</span>
+的至多可数子族，其仍能构成全空间 <span class="math inline">\(X\)</span>
+的覆盖.</p>
+<p>任取空间 <span class="math inline">\(X\)</span> 中的一点 <span
+class="math inline">\(x\)</span>. 由于 <span
+class="math inline">\(\mathscr{G}\)</span> 构成 <span
+class="math inline">\(X\)</span> 的覆盖，故必定存在至少一个开集 <span
+class="math inline">\(G_\alpha \in \mathscr{G}\)</span> 使得 <span
+class="math inline">\(x \in G_\alpha\)</span>. 基于拓扑基的定义，既然
+<span class="math inline">\(G_\alpha\)</span> 是包含点 <span
+class="math inline">\(x\)</span> 的开集，必定存在可数基 <span
+class="math inline">\(\mathscr{B}\)</span> 中的某个基元素（不妨记为
+<span class="math inline">\(B_{n(x)}\)</span>），满足：</p>
+<p><span class="math display">\[
+x \in B_{n(x)} \subset G_\alpha
+\]</span></p>
+<p>为明确对应关系，我们从原覆盖 <span
+class="math inline">\(\mathscr{G}\)</span>
+中特意指定一个包含该基元素的开集，并将其记为 <span
+class="math inline">\(G_{\alpha(x)}\)</span>. 由此，针对空间中的每一点
+<span
+class="math inline">\(x\)</span>，我们均建立了一条严密的嵌套关系：<span
+class="math inline">\(x \in B_{n(x)} \subset G_{\alpha(x)}\)</span>.</p>
+<p>令点 <span class="math inline">\(x\)</span> 遍历整个空间 <span
+class="math inline">\(X\)</span>，并将所有参与上述嵌套关系的基元素收集起来，构成新的集合族
+<span class="math inline">\(\mathscr{B}&#39; = \{ B_{n(x)} \mid x \in X
+\}\)</span>. 由于 <span class="math inline">\(\mathscr{B}&#39;\)</span>
+显然是可数拓扑基 <span class="math inline">\(\mathscr{B}\)</span>
+的子族（即 <span class="math inline">\(\mathscr{B}&#39; \subset
+\mathscr{B}\)</span>），故 <span
+class="math inline">\(\mathscr{B}&#39;\)</span> 必然是至多可数的.
+为便于逻辑推演，可将该至多可数的子族重新排列并赋予指标，记为 <span
+class="math inline">\(\mathscr{B}&#39; = \{ B_{k_1}, B_{k_2}, \dots
+\}\)</span>. 同时，由于空间 <span class="math inline">\(X\)</span>
+中的每一个点 <span class="math inline">\(x\)</span> 均被 <span
+class="math inline">\(\mathscr{B}&#39;\)</span> 中的某个基元素所覆盖，故
+<span class="math inline">\(\mathscr{B}&#39;\)</span> 同样构成了全空间
+<span class="math inline">\(X\)</span> 的一个覆盖.</p>
+<p>接下来，根据前文确立的对应法则，对于子族 <span
+class="math inline">\(\mathscr{B}&#39;\)</span> 中的每一个基元素 <span
+class="math inline">\(B_{k_i}\)</span>，我们提取出与其对应的、包含它的原始覆盖开集
+<span class="math inline">\(G_{\alpha_i} \in
+\mathscr{G}\)</span>，即满足：</p>
+<p><span class="math display">\[
+B_{k_i} \subset G_{\alpha_i}
+\]</span></p>
+<p>将这些被提取出的开集汇聚为新的集合族 <span
+class="math inline">\(\mathscr{G}&#39; = \{ G_{\alpha_i} \}\)</span>. 因
+<span class="math inline">\(\mathscr{G}&#39;\)</span>
+中的元素与至多可数的基元素族 <span
+class="math inline">\(\mathscr{B}&#39;\)</span> 建立了一一映射关系，故
+<span class="math inline">\(\mathscr{G}&#39;\)</span>
+至多是可数的，且显然有 <span class="math inline">\(\mathscr{G}&#39;
+\subset \mathscr{G}\)</span>.</p>
+<p>最后，验证集合族 <span
+class="math inline">\(\mathscr{G}&#39;\)</span> 的覆盖完备性. 因子族
+<span class="math inline">\(\mathscr{B}&#39;\)</span> 已覆盖全空间 <span
+class="math inline">\(X\)</span>，且每一个 <span
+class="math inline">\(B_{k_i}\)</span> 均被相对应的 <span
+class="math inline">\(G_{\alpha_i}\)</span>
+完全包含，依据集合并集的单调性可得：</p>
+<p><span class="math display">\[
+X = \bigcup_i B_{k_i} \subset \bigcup_i G_{\alpha_i}
+\]</span></p>
+<p>上式严格证明了 <span class="math inline">\(\mathscr{G}&#39;\)</span>
+不仅是原开覆盖 <span class="math inline">\(\mathscr{G}\)</span>
+的子族，且切实构成了全空间 <span class="math inline">\(X\)</span>
+的覆盖. 综上，从任意开覆盖 <span
+class="math inline">\(\mathscr{G}\)</span>
+中，确能选出一个至多可数的子覆盖，命题得证.</p>
+<h2 id="助教提点">助教提点</h2>
+<p>这道习题在拓扑学发展史上享有极高的声誉，它所证明的结论即为大名鼎鼎的<strong>林德勒夫定理（Lindelöf’s
+Theorem）</strong>。该定理深刻揭示了第二可数公理的强大威力——它能够将任何极其庞大、不可数发散的开覆盖，强行“压缩”成一个至多可数的子覆盖。这种“开覆盖提纯”的特性在拓扑学中被专门定义为Lindelöf空间，它与要求“存在有限子覆盖”的紧致性概念遥相呼应，共同构成了现代分析学控制无穷维空间结构的核心工具。特别值得一提的是，在一般的度量空间范畴内，“满足第二可数公理”、“空间可分（即存在可数稠密子集）”以及“属于Lindelöf空间”这三个条件是完全等价的。我们通过本题严格推演了“第二可数公理
+<span class="math inline">\(\implies\)</span>
+Lindelöf空间”的单向逻辑链条。对于学有余力的同学，强烈建议课后尝试证明“可分空间
+<span class="math inline">\(\implies\)</span>
+第二可数公理”这一经典命题，这对于深度理解度量空间的拓扑等价性大有裨益。</p>
+<p>就期末考试的阅卷标准而言，本题的逻辑环环相扣，踩分点极其明确。若以此作为一道满分为10分的证明大题，评分细则将遵循以下结构：首先，能够敏锐地引入可数基作为中介，并利用基的定义写出点、基元素与开集之间的嵌套关系（<span
+class="math inline">\(x \in B \subset
+G\)</span>），此为破题核心，可获3分；其次，准确收集所有被激活的基元素构成子族，并明确论证其至多可数性，可获2分；随后，利用映射关系从原覆盖中准确挑选出对应的开集构成子覆盖，再获2分；最后，通过严格的集合运算（即并集的包含关系）验证该子族确实覆盖了全空间，完成逻辑闭环，斩获最后的3分。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Billyfu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://billyfu.top/2026/08/31/functional/functional_exercises1-25/" title="泛函分析习题讲解 习题1.25">https://billyfu.top/2026/08/31/functional/functional_exercises1-25/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/08/31/functional/functional_exercises1-24/" rel="prev" title="泛函分析习题讲解 习题1.24">
+                  <i class="fa fa-angle-left"></i> 泛函分析习题讲解 习题1.24
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2025-06 – 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">傅祉珏 (FU TszKok) <br> 博客代码开源遵循 AGPL-3.0 协议 | 所有博文遵循 CC BY-NC-ND 4.0 协议，未经明确书面授权，严禁任何形式的商业转载、洗稿或用于牟利。</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
