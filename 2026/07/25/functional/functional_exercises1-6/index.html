@@ -27,7 +27,7 @@
 <meta property="og:description" content="习题题面 证明在距离空间中，如果一个半径为7的开球包含在一个半径为3的开球中，则这两个球重合.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-25T15:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-24T20:49:04.850Z">
+<meta property="article:modified_time" content="2026-08-31T16:32:02.290Z">
 <meta property="article:author" content="Billyfu">
 <meta name="twitter:card" content="summary">
 
@@ -241,9 +241,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2026-07-25 23:00:00 / 修改时间：04:49:04" itemprop="dateCreated datePublished" datetime="2026-07-25T23:00:00+08:00">2026-07-25</time>
+      <time title="创建时间：2026-07-25 23:00:00" itemprop="dateCreated datePublished" datetime="2026-07-25T23:00:00+08:00">2026-07-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-09-01 00:32:02" itemprop="dateModified" datetime="2026-09-01T00:32:02+08:00">2026-09-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -316,42 +322,44 @@ class="math inline">\(R&gt;2r\)</span>
 的思路，利用离散点空间构造出一个反例？</p>
 </blockquote>
 <h2 id="标准解答">标准解答</h2>
-<p>教材给出的证明逻辑已经非常严密且标准，可直接作为考试作答模板.
-为了便于大家复习，这里将其梳理为两步证明法：</p>
-<p><strong>第一步：证明 <span class="math inline">\(B(x_2,3) \subset
-B(x_1,7)\)</span></strong></p>
-<p>已知 <span class="math inline">\(B(x_1,7) \subset
-B(x_2,3)\)</span>，这意味着大球 <span
-class="math inline">\(B(x_1,7)\)</span> 的球心 <span
-class="math inline">\(x_1\)</span> 必然属于小球 <span
-class="math inline">\(B(x_2,3)\)</span>，根据开球定义有：</p>
+<p>首先证明集合的逆向包含关系 <span class="math inline">\(B(x_2,3)
+\subset B(x_1,7)\)</span>. 依题意已知 <span
+class="math inline">\(B(x_1,7) \subset B(x_2,3)\)</span>，由于球心 <span
+class="math inline">\(x_1\)</span> 显然属于开球 <span
+class="math inline">\(B(x_1,7)\)</span>，故 <span
+class="math inline">\(x_1\)</span> 必然也属于开球 <span
+class="math inline">\(B(x_2,3)\)</span>.
+根据开球的度量定义，两球心之间的距离满足：</p>
 <p><span class="math display">\[
 d(x_1,x_2) &lt; 3
 \]</span></p>
-<p>对于小球 <span class="math inline">\(B(x_2,3)\)</span> 中的任意一点
-<span class="math inline">\(y\)</span>，同样根据开球定义有：</p>
+<p>任取开球 <span class="math inline">\(B(x_2,3)\)</span> 中的任意一点
+<span class="math inline">\(y\)</span>，同样依开球定义有：</p>
 <p><span class="math display">\[
 d(x_2,y) &lt; 3
 \]</span></p>
-<p>根据距离空间的三角不等式，点 <span class="math inline">\(y\)</span>
-到大球球心 <span class="math inline">\(x_1\)</span> 的距离满足：</p>
+<p>利用度量空间的三角不等式，考察点 <span
+class="math inline">\(y\)</span> 到球心 <span
+class="math inline">\(x_1\)</span> 的距离：</p>
 <p><span class="math display">\[
 d(x_1,y) \le d(x_1,x_2) + d(x_2,y) &lt; 3 + 3 = 6
 \]</span></p>
-<p>因为 <span class="math inline">\(6 &lt; 7\)</span>，即 <span
-class="math inline">\(d(x_1,y) &lt; 7\)</span>，所以点 <span
-class="math inline">\(y\)</span> 必然也属于大球 <span
-class="math inline">\(B(x_1,7)\)</span>。这说明小球中的任意一点都在大球中，即
-<span class="math inline">\(B(x_2,3) \subset B(x_1,7)\)</span>.</p>
-<p><strong>第二步：得出重合结论</strong></p>
-<p>由题设已知 <span class="math inline">\(B(x_1,7) \subset
-B(x_2,3)\)</span>，结合第一步证得的 <span class="math inline">\(B(x_2,3)
-\subset
-B(x_1,7)\)</span>，根据集合相等的定义，两者互为子集，故两球重合：</p>
+<p>由于 <span class="math inline">\(6 &lt; 7\)</span>，即严格推得 <span
+class="math inline">\(d(x_1,y) &lt; 7\)</span>. 这表明点 <span
+class="math inline">\(y\)</span> 必然属于开球 <span
+class="math inline">\(B(x_1,7)\)</span>. 既然 <span
+class="math inline">\(B(x_2,3)\)</span> 中的任意一点均落在 <span
+class="math inline">\(B(x_1,7)\)</span> 内部，故得出严格的包含关系：</p>
+<p><span class="math display">\[
+B(x_2,3) \subset B(x_1,7)
+\]</span></p>
+<p>结合题设已知的包含关系 <span class="math inline">\(B(x_1,7) \subset
+B(x_2,3)\)</span>，以及上述推演得出的逆向包含关系 <span
+class="math inline">\(B(x_2,3) \subset
+B(x_1,7)\)</span>，根据集合相等的公理化定义，两集合互为子集，故两开球必然完全重合，即：</p>
 <p><span class="math display">\[
 B(x_1,7) = B(x_2,3)
 \]</span></p>
-<p>证明完毕.</p>
 <h2 id="助教提点">助教提点</h2>
 <p>作为上一题的绝佳姊妹题，这道题同样属于那种“乍看反直觉，实则非常trivial（平凡）”的经典命题。它的核心目的依然是考验大家对数学定义（特别是距离空间三角不等式）的绝对信任与熟练运用。正如【习题分析】中所强调的，在泛函分析的学习中，一旦我们脱离了直观的几何空间，日常直觉往往会失效，唯有严格的数学逻辑推理才是最可靠的抓手。</p>
 <p>至于这道题的考法与评分，由于它与习题 1.5
